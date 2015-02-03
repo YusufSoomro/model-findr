@@ -1,0 +1,47 @@
+<h1>Sign Up</h1>
+
+<form id="new-user-form" action="<%= api_users_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>
+    Email
+    <input type="text" name="user[email]">
+  </label><br>
+
+  <label>
+    Username
+    <input type="text" name="user[username]">
+  </label><br>
+
+  <label>
+    Password
+    <input type="password" name="user[password]">
+  </label><br>
+
+  <label>
+    Skill Type
+    <select name="user[skill_type]">
+      <option value="PHOTOG">Photographer</option>
+      <option value="MODEL">Model</option>
+    </select>
+  </label><br>
+
+  <label>
+    Gender
+    <select name="user[gender]">
+      <option value="M">M</option>
+      <option value="F">F</option>
+    </select>
+  </label><br>
+
+  <label>
+    City
+    <select name="user[city]">
+      <option value="San Leandro, CA">San Leandro, CA</option>
+    </select>
+  </label><br>
+
+  <input type="submit" value="Create Account">
+  <br><br>
+  <button>Guest Login</button>
+</form>
