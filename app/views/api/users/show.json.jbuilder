@@ -9,3 +9,6 @@ json.extract! @user,
               :experience,
               :compensation,
               :avatar_img
+json.images do
+  json.array! @user.images
+end

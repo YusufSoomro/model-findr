@@ -9,6 +9,16 @@ class Api::ImagesController < ApplicationController
     end
   end
 
+  def show
+    @image = Image.find(params[:id])
+
+    if @image
+      render json: @image
+    else
+      render json: "Image not found", status: :unprocessable_entity
+    end
+  end
+
   private
     def image_params
       params.require(:image).permit(:user_id, :img_url, :caption)

@@ -3,4 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #avatar-img {
   border: 1px solid;
+  border-radius: 2%;
+}
+
+#sidebar {
+  float: left;
+  padding-right: 20px;
+  border-right: 1px solid;
+  margin-right: 30px;
+}
+
+#sidebar h1 {
+  border-bottom: 1px solid;
+}
+
+.user-general-info {
+  margin-left: 5px;
+  border-bottom: 1px solid;
+}
+
+.user-general-info li {
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+.user-general-info button {
+  float: right;
+  font-size: 25px;
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+#user-portfolio img {
+  width: 300px;
+  max-height: 200px;
 }

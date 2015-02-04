@@ -3,6 +3,7 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
   tagName: 'div',
 
   attrsToDisplay: ["gender", "skill_type", "city", "email"],
+  detailAttrs: ["experience", "compensation"],
 
   initialize: function(options) {
     this.model = options.model;
@@ -17,6 +18,12 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
       var infoLI = $("<li>" + this.model.get(atr) + "</li>")
       this.$('#user-gen-info-list').append(infoLI)
     }, this);
+
+    this.model.imageCollection().each( function(image) {
+      var imageLI = $('<li>')
+      imageLI.html("<img src=" + image.get('img_url') + ">")
+      this.$('#user-portfolio').append(imageLI)
+    });
 
     return this;
   }

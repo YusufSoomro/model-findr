@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :users, only: [:show, :update]
+    resources :images, only: [:create, :show]
   end
 end
