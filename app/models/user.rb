@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 
   validates :email, :username, :password_digest, :session_token, uniqueness: true, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
-  validates :skill_type, inclusion: { in: ["PHOTOG", "MODEL"] }
-  validates :gender, inclusion: { in: ["M", "F"] }
+  validates :skill_type, inclusion: { in: ["Photographer", "Model"] }
+  validates :gender, inclusion: { in: ["Male", "Female"] }
 
 
   def self.find_by_credentials(email, password)

@@ -17,7 +17,7 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
       var infoLI = $("<li>" + this.model.get(atr) + "</li>")
       this.$('#user-gen-info-list').append(infoLI)
     }, this);
-    
+
     return this;
   }
 })
