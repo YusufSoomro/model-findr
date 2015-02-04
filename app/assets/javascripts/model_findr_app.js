@@ -8,7 +8,3 @@ window.ModelFindrApp = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  ModelFindrApp.initialize();
-});

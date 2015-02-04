@@ -19,7 +19,8 @@ class Api::UsersController < ApplicationController
         :city,
         :about_me,
         :experience,
-        :compensation
+        :compensation,
+        :avatar_img
       )
     end
 end

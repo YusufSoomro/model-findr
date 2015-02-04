@@ -22,7 +22,8 @@ class UsersController < ApplicationController
         :password,
         :skill_type,
         :gender,
-        :city
+        :city,
+        :avatar_img
       )
     end
 end

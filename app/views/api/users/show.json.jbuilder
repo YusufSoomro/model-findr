@@ -7,4 +7,5 @@ json.extract! @user,
               :city,
               :about_me,
               :experience,
-              :compensation
+              :compensation,
+              :avatar_img

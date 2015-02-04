@@ -13,12 +13,13 @@ class SessionsController < ApplicationController
       login!(@user)
       redirect_to root_url
     else
-      render json: "Couldn't find user with those credentials"
+      flash.now[:error] = "Wrong combination of email/password"
+      render 'sessions/new'
     end
   end
 
   def destroy
     logout!
-    redirect_to new_session_url
+    render json: {}
   end
 end

@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+
+gem 'filepicker-rails'
 gem 'bcrypt'
 gem 'newrelic_rpm'
 gem 'rails', '4.2.0'

@@ -5,14 +5,25 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
   },
 
   routes: {
-    "users/:id": "show"
+    "users/:id": "show",
+    "": "blah"
+  },
+
+  navbar: function() {
+    var nav = new ModelFindrApp.Views.Navbar;
+    $('body').prepend(nav.render().$el);
   },
 
   show: function(id) {
+    this.navbar();
     var user = this.userCollection.getOrFetch(id);
     var userShow = new ModelFindrApp.Views.UserShow({model: user})
 
     this._swapView(userShow);
+  },
+
+  blah: function() {
+    this.navbar();
   },
 
   _swapView: function(view) {
