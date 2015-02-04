@@ -4,7 +4,9 @@ window.ModelFindrApp = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    // alert('Hello from Backbone!');
+    new ModelFindrApp.Routers.UserRouter;
+    Backbone.history.start();
   }
 };
 
