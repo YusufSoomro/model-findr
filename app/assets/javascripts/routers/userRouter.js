@@ -2,11 +2,12 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
   initialize: function() {
     this.userCollection = new ModelFindrApp.Collections.Users();
     this.$rootEl = $('#main');
+    this.navbar();
   },
 
   routes: {
     "users/:id": "show",
-    "": "blah"
+    "users/:id/portfolio": "userPortfolio"
   },
 
   navbar: function() {
@@ -25,8 +26,13 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     this._swapView(userShow);
   },
 
-  blah: function() {
+  userPortfolio: function(id) {
     this.navbar();
+    var user = new ModelFindrApp.Models.User({id: id});
+    user.fetch();
+    var portfolio = new ModelFindrApp.Views.UserPortfolio({model: user});
+
+    this._swapView(portfolio);
   },
 
   _swapView: function(view) {

@@ -1,6 +1,7 @@
 ModelFindrApp.Views.UserShow = Backbone.View.extend({
   events: {
-    'click #photo-btn': 'uploadPhoto'
+    'click #photo-btn': 'uploadPhoto',
+    'click .pf-btn': 'navToPortfolio'
   },
 
   template: JST['users/show'],
@@ -54,5 +55,10 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
         console.log(FPError.toString());
       }
     );
+  },
+
+  navToPortfolio: function(event) {
+    event.preventDefault();
+    Backbone.history.navigate('users/' + this.model.id + '/portfolio', {trigger: true})
   }
 })
