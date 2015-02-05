@@ -13,7 +13,7 @@ class Api::ImagesController < ApplicationController
     @image = Image.find(params[:id])
 
     if @image
-      render json: @image
+      render 'api/images/show.json.jbuilder'
     else
       render json: "Image not found", status: :unprocessable_entity
     end

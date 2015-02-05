@@ -24,11 +24,11 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
       this.$('#user-gen-info-list').append(infoLI)
     }, this);
 
-    this.model.imageCollection().each( function(image) {
-      var imageLI = $('<li>')
-      imageLI.html("<img src=" + image.get('img_url') + ">")
-      this.$('#user-portfolio').append(imageLI)
-    });
+    _.each(this.model.imageCollection().slice(0, 4), function(image) {
+      var imageLI = $('<li>');
+      imageLI.html("<img src=" + image.get('img_url') + ">");
+      this.$('#user-portfolio').append(imageLI);
+    }, this);
 
     return this;
   },

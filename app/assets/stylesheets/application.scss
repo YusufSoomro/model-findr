@@ -11,19 +11,50 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require justifiedGallery.min
  *= require_self
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
+
+ html, body, div, span, object, iframe,
+ p, blockquote, pre,
+ abbr, address, cite, code,
+ del, dfn, em, img, ins, kbd, q, samp,
+ small, strong, sub, sup, var,
+ b, i,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section, summary,
+ time, mark, audio, video {
+   margin:0;
+   padding:0;
+   border:0;
+   outline:0;
+   font-size:100%;
+   vertical-align:baseline;
+   background:transparent;
+ }
+
 #main {
   width: 80%;
+  overflow: auto;
   margin-left: 150px;
   border: 1px solid;
-  border-radius: 10px
+  border-radius: 10px;
+  background-color: white;
 }
 
  #main li {
    list-style: none;
  }
+
+body {
+  background-image: url("https://www.filepicker.io/api/file/WgYovFyqRKWQ8fK3gdcF");
+  background-size: 100%;
+}
