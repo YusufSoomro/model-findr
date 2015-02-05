@@ -6,26 +6,27 @@
 .navbar {
   float: top;
   height: 40px;
-  clear: both;
   border-bottom: 2px solid;
 }
 
 .navbar-list li {
   float: left;
   list-style: none;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-left: 10px;
   font-size: 20px
 }
 
 #your-city {
-  padding-left: 100px;
+  padding-left: 50px;
 }
 
 #logo {
-  padding-right: 100px;
+  padding-right: 10px;
+  border-right: 1px solid;
+  margin-right: 10px;
 }
 
-#upload {
-  padding-left: 100px;
+#profile {
+  padding-left: 50px;
 }

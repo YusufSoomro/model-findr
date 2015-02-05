@@ -12,7 +12,6 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
   initialize: function(options) {
     this.model = options.model;
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "change", this.render)
   },
 
   render: function() {

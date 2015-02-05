@@ -10,8 +10,11 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
   },
 
   navbar: function() {
-    var nav = new ModelFindrApp.Views.Navbar;
-    $('body').prepend(nav.render().$el);
+    if (!this._nav) {
+      var nav = new ModelFindrApp.Views.Navbar;
+      this._nav = nav
+      $('body').prepend(nav.render().$el);
+    }
   },
 
   show: function(id) {

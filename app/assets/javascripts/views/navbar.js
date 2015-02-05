@@ -2,7 +2,8 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
   template: JST['navbar'],
 
   events: {
-    "click #sign-out": "signOut"
+    "click #sign-out": "signOut",
+    'click #profile': "profilePage"
   },
 
   render: function() {
@@ -20,5 +21,9 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
         window.location = "/session/new";
       }
     });
+  },
+
+  profilePage: function() {
+    Backbone.history.navigate('users/' + ModelFindrApp.currentUserId, {trigger: true})
   }
 })
