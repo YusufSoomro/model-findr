@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-
+    
   end
 
   private

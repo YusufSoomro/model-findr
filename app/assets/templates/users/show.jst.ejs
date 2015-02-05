@@ -3,16 +3,19 @@
   <br>
   <h2>Details</h2>
   <ul id="user-details">
-    <li> Compensation: <%= user.get('compensation') %></li>
+    <li> <strong>Compensation:</strong> <%= user.get('compensation') %></li>
     <br>
-    <li> Experience: <%= user.get('experience') %></li>
+    <li> <strong>Experience:</strong> <%= user.get('experience') %></li>
   </ul>
 </div>
 
 <div id="content" style="float: left; width: 60%;">
   <div class="user-general-info">
-    <button id="edit-btn">Edit Profile</button>
-    <button id="photo-btn">Upload Photo</button>
+
+    <% if (ModelFindrApp.currentUserId === parseInt(user.id)) { %>
+      <button id="edit-btn">Edit Profile</button>
+      <button id="photo-btn">Upload Photo</button>
+    <% } %>
 
     <div id="exampleDropPane"></div>
 
