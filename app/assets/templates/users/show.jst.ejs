@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="sidebar" style="float: left; width: 30%;">
   <img id="avatar-img" src="<%= user.get('avatar_img') %>"/>
   <br>
   <h2>Details</h2>
@@ -9,23 +9,28 @@
   </ul>
 </div>
 
-<div class="user-general-info">
-  <button id="edit-btn">Edit Profile</button>
+<div id="content" style="float: left; width: 60%;">
+  <div class="user-general-info">
+    <button id="edit-btn">Edit Profile</button>
+    <button id="photo-btn">Upload Photo</button>
 
-  <h1><%= user.get('username') %></h1>
-  <ul id="user-gen-info-list">
-  </ul>
-</div>
+    <div id="exampleDropPane"></div>
 
-<div id="about-me">
-  <h2>About Me</h2>
-  <p>
-    <%= user.get('about_me') %>
-  </p>
-</div>
+    <h1><%= user.get('username') %></h1>
+    <ul id="user-gen-info-list">
+    </ul>
+  </div>
 
-<div id="portfolio">
-  <h3>Portfolio</h3>
-  <ul id="user-portfolio">
-  </ul>
+  <div id="about-me">
+    <h2>About Me</h2>
+    <p>
+      <%= user.get('about_me') %>
+    </p>
+  </div>
+
+  <div id="portfolio">
+    <h3>Portfolio</h3>
+    <ul id="user-portfolio" class="list-inline">
+    </ul>
+  </div>
 </div>

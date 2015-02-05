@@ -1,4 +1,8 @@
 ModelFindrApp.Views.UserShow = Backbone.View.extend({
+  events: {
+    'click #photo-btn': 'uploadPhoto'
+  },
+
   template: JST['users/show'],
   tagName: 'div',
 
@@ -7,7 +11,8 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
 
   initialize: function(options) {
     this.model = options.model;
-    this.listenTo(this.model, "sync", this.render)
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "change", this.render)
   },
 
   render: function() {
@@ -26,5 +31,28 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
     });
 
     return this;
+  },
+
+  uploadPhoto: function () {
+    var that = this;
+
+    filepicker.pick(
+      {
+        mimetypes: ['image/*', 'text/plain'],
+        container: 'modal',
+        services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
+      },
+      function(blob){
+        var newImage = new ModelFindrApp.Models.Image({
+          user_id: this.model.id,
+          img_url: blob.url
+        });
+
+        newImage.save();
+      }.bind(that),
+      function(FPError){
+        console.log(FPError.toString());
+      }
+    );
   }
 })
