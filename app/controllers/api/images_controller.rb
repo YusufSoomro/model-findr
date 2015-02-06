@@ -15,9 +15,9 @@ class Api::ImagesController < ApplicationController
     if params[:your_city]
       @images = Image.order(id: :desc)
         .where("user_city = ?", current_user.city)
-        .limit(5)
+        .limit(20)
     else
-      @images = Image.order(id: :desc).limit(5)
+      @images = Image.order(id: :desc).limit(20)
     end
 
     render 'api/images/index.json.jbuilder'

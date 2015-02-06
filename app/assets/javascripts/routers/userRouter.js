@@ -55,6 +55,14 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     this._swapView(exploreView);
   },
 
+  cityImgs: function() {
+    var cityView = new ModelFindrApp.Views.CityImgs({
+      collection: this.cityImgCollection()
+    });
+
+    this._swapView(cityView);
+  },
+
   _swapView: function(view) {
     if (this._currentView) {
       this._currentView.remove();

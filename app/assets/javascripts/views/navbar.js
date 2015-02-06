@@ -4,7 +4,8 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
   events: {
     "click #sign-out": "signOut",
     'click #profile': "profilePage",
-    'click #explore': "exploreImgsPage"
+    'click #explore': "exploreImgsPage",
+    'click #your-city': "cityImgsPage"
   },
 
   render: function() {
@@ -32,5 +33,11 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
     event.preventDefault();
 
     Backbone.history.navigate("explore_imgs", {trigger: true});
+  },
+
+  cityImgsPage: function(event) {
+    event.preventDefault();
+
+    Backbone.history.navigate("city_imgs", {trigger: true});
   }
 })

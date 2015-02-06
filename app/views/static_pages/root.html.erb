@@ -1,9 +1,10 @@
 <script charset="utf-8">
   $(document).ready(function(){
     ModelFindrApp.initialize();
+    Backbone.history.navigate("explore_imgs", {trigger: true})
   });
 
-  ModelFindrApp.currentUserId = <%= current_user.id %> 
+  ModelFindrApp.currentUserId = <%= current_user.id %>
 
   filepicker.setKey("Aj6UeHtuxTf2ro7P6it1Ez");
 </script>
