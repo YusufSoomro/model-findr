@@ -23,8 +23,8 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     this.$(".img-list").justifiedGallery({
-      lastRow: 'justify',
-      rowHeight: 200,
+      lastRow: 'nojustify',
+      rowHeight: 400,
       margins: 5
     });
 
