@@ -26,7 +26,7 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
       this.$('#user-gen-info-list').append(infoLI)
     }, this);
 
-    _.each(this.model.imageCollection().slice(0, 4), function(image) {
+    _.each(this.model.imageCollection().slice(0, 3), function(image) {
       var imageLI = $('<li>');
       imageLI.html("<img src=" + image.get('img_url') + ">");
       this.$('#user-portfolio').append(imageLI);

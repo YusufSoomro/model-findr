@@ -4,10 +4,16 @@
 }
 
 .navbar {
-  background: white;
+  background: black;
   float: top;
   height: 40px;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.navbar-list li:first-child {
+  font-size: 25px;
+  padding-top: 5px;
 }
 
 .navbar-list li {
@@ -15,7 +21,14 @@
   list-style: none;
   padding-top: 10px;
   padding-left: 10px;
-  font-size: 20px
+  font-size: 20px;
+  transition: color 500ms;
+  cursor: pointer;
+}
+
+.navbar-list li:hover {
+  color: #A0A0A0;
+  cursor: pointer;
 }
 
 #your-city {
@@ -26,6 +39,7 @@
   padding-right: 10px;
   border-right: 1px solid;
   margin-right: 10px;
+  color: cyan-blue;
 }
 
 #profile {
