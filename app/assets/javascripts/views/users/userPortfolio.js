@@ -42,7 +42,8 @@ ModelFindrApp.Views.UserPortfolio = Backbone.CompositeView.extend({
       function(blob){
         var newImage = new ModelFindrApp.Models.Image({
           user_id: this.model.id,
-          img_url: blob.url
+          img_url: blob.url,
+          user_city: this.model.get('city')
         });
 
         newImage.save();

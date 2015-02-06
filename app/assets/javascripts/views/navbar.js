@@ -3,7 +3,8 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
 
   events: {
     "click #sign-out": "signOut",
-    'click #profile': "profilePage"
+    'click #profile': "profilePage",
+    'click #explore': "exploreImgsPage"
   },
 
   render: function() {
@@ -25,5 +26,11 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
 
   profilePage: function() {
     Backbone.history.navigate('users/' + ModelFindrApp.currentUserId, {trigger: true})
+  },
+
+  exploreImgsPage: function(event) {
+    event.preventDefault();
+
+    Backbone.history.navigate("explore_imgs", {trigger: true});
   }
 })

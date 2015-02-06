@@ -26,7 +26,7 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
       this.$('#user-gen-info-list').append(infoLI)
     }, this);
 
-    _.each(this.model.imageCollection().slice(0, 3), function(image) {
+    _.each(this.model.imageCollection().slice(0, 4), function(image) {
       var imageLI = $('<li>');
       imageLI.html("<img src=" + image.get('img_url') + ">");
       this.$('#user-portfolio').append(imageLI);
@@ -47,7 +47,8 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
       function(blob){
         var newImage = new ModelFindrApp.Models.Image({
           user_id: this.model.id,
-          img_url: blob.url
+          img_url: blob.url,
+          user_city: this.model.get('city')
         });
 
         newImage.save();

@@ -10,7 +10,11 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
       this.addSubview('.img-list', imgLI)
     }, this);
     this.listenTo(this.collection, 'add', this.addImage);
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.collection, 'sync', this.render);
+
+    if (this.model) {
+      this.listenTo(this.model, "sync", this.render);
+    }
   },
 
   addImage: function (image) {

@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  validates :user_id, :img_url, presence: true
+  validates :user_id, :img_url, :user_city, presence: true
 
   belongs_to :user
 

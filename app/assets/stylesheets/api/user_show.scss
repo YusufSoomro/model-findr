@@ -18,6 +18,11 @@
   border-bottom: 1px solid;
 }
 
+#sidebar #avatar-img {
+  width: 100%;
+  margin: 10px;
+}
+
 .user-general-info {
   margin-left: 5px;
   border-bottom: 1px solid;
@@ -37,7 +42,7 @@
 #user-portfolio img {
   width: 200px;
   max-height: 150px;
-  margin-bottom: 5px;
+  margin: 5px;
   // float: left
 }
 

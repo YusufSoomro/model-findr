@@ -8,7 +8,9 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
   routes: {
     "users/:id": "show",
     "users/:id/portfolio": "userPortfolio",
-    "users/:id/edit": "editProfile"
+    "users/:id/edit": "editProfile",
+    "explore_imgs": "exploreImgs",
+    "city_imgs": "cityImgs"
   },
 
   navbar: function() {
@@ -45,6 +47,14 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     this._swapView(editPage);
   },
 
+  exploreImgs: function() {
+    var exploreView = new ModelFindrApp.Views.ExploreImgs({
+      collection: this.exploreImgCollection()
+    });
+
+    this._swapView(exploreView);
+  },
+
   _swapView: function(view) {
     if (this._currentView) {
       this._currentView.remove();
@@ -52,5 +62,27 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
 
     this._currentView = view
     this.$rootEl.html(view.render().$el)
+  },
+
+  exploreImgCollection: function() {
+    if (this._expImgCollection) {
+      return this._expImgCollection;
+    } else {
+      this._expImgCollection = new ModelFindrApp.Collections.Images;
+      this._expImgCollection.fetch();
+
+      return this._expImgCollection;
+    }
+  },
+
+  cityImgCollection: function() {
+    if (this._cityImgCollection) {
+      return this._cityImgCollection;
+    } else {
+      this._cityImgCollection = new ModelFindrApp.Collections.Images;
+      this._cityImgCollection.fetch({ data: { your_city: true} });;
+
+      return this._cityImgCollection;
+    }
   }
 })
