@@ -1,0 +1,67 @@
+<form class="edit-form">
+  <div id="sidebar" style="float: left; width: 30%;">
+    <img id="avatar-img" src="<%= user.get('avatar_img') %>"/>
+    <br>
+    <h2>Details</h2>
+    <ul id="user-details">
+
+      <li> <strong>Compensation:</strong>
+        <select class="compensation-input" name="user[compensation]">
+          <option value="None" <% if (user.get("compensation") === "None") { %>selected<% } %> >None</option>
+          <option value="Depends on Assignment" <% if (user.get("compensation") === "Depends on Assignment") { %>selected<% } %> >Depends on Assignment</option>
+          <option value="Required" <% if (user.get("compensation") === "Required") { %>selected<% } %> >Required</option>
+        </select>
+      </li>
+
+      <br>
+
+      <li> <strong>Experience:</strong>
+        <select class="experience-input" name="user[experience]">
+          <option value="None" <% if (user.get("experience") === "None") { %>selected<% } %> >None</option>
+          <option value="Some" <% if (user.get("experience") === "Some") { %>selected<% } %> >Some</option>
+          <option value="Experienced" <% if (user.get("experience") === "Experienced") { %>selected<% } %> >Experienced</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+
+  <div id="content" style="float: left; width: 60%;">
+    <div class="user-general-info">
+      <h1><%= user.get('username') %></h1>
+
+      <label>
+        Gender:
+        <select class="gender-input" name="user[gender]">
+          <option value="Male" <% if (user.get("gender") === "Male") { %>selected<% } %> >Male</option>
+          <option value="Female" <% if (user.get("gender") === "Female") { %>selected<% } %> >Female</option>
+        </select>
+      </label><br><br>
+
+      <label>
+        Skill Type:
+        <select class="skill-input" name="user[skill_type]">
+          <option value="Photographer" <% if (user.get("skill_type") === "Photographer") { %>selected<% } %> >Photographer</option>
+          <option value="Model" <% if (user.get("skill_type") === "Model") { %>selected<% } %> >Model</option>
+        </select>
+      </label><br><br>
+
+      <label>
+        City
+        <input type="text" name="user[city]" value="<%= user.get('city') %>">
+      </label><br><br>
+
+      <label>
+        Email:
+        <input class="email-input" type="text" name="user[email]" value="<%= user.get('email') %>">
+      </label><br><br>
+    </div>
+
+    <div id="about-me">
+      <h2>About Me</h2>
+      <textarea class="about-me-input" name="user[about_me]" rows="8" cols="75"><%= user.get('about_me') %></textarea>
+    </div>
+  </div>
+
+
+  <input class="submit-btn" type="submit" value="Save Changes">
+</form>
