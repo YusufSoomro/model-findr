@@ -6,6 +6,7 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
   },
 
   routes: {
+    "": "exploreImgs",
     "users/:id": "show",
     "users/:id/portfolio": "userPortfolio",
     "users/:id/edit": "editProfile",
