@@ -50,7 +50,12 @@
 
  h5 {
    font-family: "Pacifico";
-   font-size: 30px;
+   font-size: 50px;
+   margin: 20px;
+   border-bottom: 5px solid;
+   border-color: #11b8cc;
+   text-align: center;
+   display: inline-block;
  }
 
  h6 {
@@ -59,12 +64,12 @@
  }
 
 #main {
-  width: 70%;
+  width: 90%;
   overflow: auto;
-  margin-left: 225px;
+  margin: auto;
   border: 1px solid;
   border-radius: 10px;
-  background-color: white;
+  background-color: #eee;
 }
 
  #main li {
@@ -76,16 +81,35 @@ body {
   background-size: 100%;
 }
 
-button {
-  // font-family: "Pacifico";
-  background-color: #128fdc;
-  border-radius: 10%;
-  padding: 5px;
-  font-size: 20px;
-  color: #E0E0E0;
-  transition: color 500ms;
+button
+{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #11b8cc;
+
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+
+  top:0; right:0; bottom:0; left:0;
+
+  padding: 10px 5;
+  padding-top: 10px;
+  width: 180px;
+  height: 50px;
+
+  background: #11b8cc;
+  border: 1px solid #11b8cc;
+  color: #FFF;
+
+  transition: all 0.5s;
+  text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #11b8cc
 }
 
-button:hover {
-  color: white;
+button:hover, button:active
+{
+  text-decoration: none;
+  color: #11b8cc;
+  background: #FFF;
 }
