@@ -1,0 +1,20 @@
+.caption a {
+  color: white;
+}
+
+.caption a:hover {
+  color: white;
+}
+
+.glyphicon-heart {
+  color: #C0C0C0;
+  float: right;
+  margin-right: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: color 500ms;
+}
+
+.glyphicon-heart:hover {
+  color: white;;
+}

@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 
   has_many :images
 
+  has_many :image_likes, foreign_key: :liker_id
+
+  has_many :liked_images, through: :image_likes, source: :image
+
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
 

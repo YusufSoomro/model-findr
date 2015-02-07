@@ -4,4 +4,8 @@ class Image < ActiveRecord::Base
   belongs_to :user
 
   has_many :image_likes
+
+  def liked_by_user?(user)
+    user.liked_images.include?(self)
+  end
 end

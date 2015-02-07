@@ -12,6 +12,8 @@ class Api::ImagesController < ApplicationController
   end
 
   def index
+    @current_user = current_user
+
     if params[:your_city]
       @images = Image.order(id: :desc)
         .where("user_city = ?", current_user.city)
