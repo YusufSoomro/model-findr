@@ -4,6 +4,8 @@
 
     <div class="heart-shit">
       <span class="glyphicon glyphicon-heart"></span>
-      x<%= picture.get('num_likes') %>
+      x<span id="num-likes" data-id="<%= picture.get('num_likes') %>">
+        <%= picture.get('num_likes') %>
+      </span>
     </div>
 </div>

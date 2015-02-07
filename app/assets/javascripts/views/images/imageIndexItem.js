@@ -21,6 +21,7 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
 
   makeImgLike: function(event) {
     event.preventDefault();
+    var that = this;
 
     this.$('.glyphicon-heart').css("color", "red");
 
@@ -30,6 +31,11 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
     })
 
     newImgLike.save({}, {
+      success: function() {
+        var likePlusOne = parseInt(this.$("#num-likes").data("id")) + 1
+
+        this.$("#num-likes").html(likePlusOne + "")
+      }.bind(that),
       error: function() {
         console.log("Lol, you can't like that twice newb.");
       }
