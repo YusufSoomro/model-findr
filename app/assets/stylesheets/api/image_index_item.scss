@@ -7,10 +7,14 @@
   color: white;
 }
 
-.glyphicon-heart {
-  color: #C0C0C0;
+.heart-shit {
   float: right;
   margin-right: 20px;
+  font-size: 15px;
+}
+
+.glyphicon-heart {
+  color: #C0C0C0;
   font-size: 25px;
   cursor: pointer;
   transition: color 500ms;

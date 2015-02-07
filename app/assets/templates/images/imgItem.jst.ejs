@@ -2,5 +2,8 @@
 <div class="caption">
     by <a href="#users/<%= picture.get('user_id') %>" target="_blank"><%= picture.get('author_username') %></a>
 
-    <span class="glyphicon glyphicon-heart"></span>
+    <div class="heart-shit">
+      <span class="glyphicon glyphicon-heart"></span>
+      x<%= picture.get('num_likes') %>
+    </div>
 </div>
