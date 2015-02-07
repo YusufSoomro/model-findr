@@ -1,7 +1,7 @@
 <form id="new-session-form" action="<%= session_url %>" method="post">
   <img src="https://www.filepicker.io/api/file/q49noi2xQdqHLKhRIxxo">
   <br>
-  <h1>Sign In</h1>
+  <h6>Sign In</h6>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label>
@@ -16,7 +16,7 @@
     <input type="password" name="user[password]">
   </label><br><br>
 
-  <input type="submit" value="Log In">
+  <input class="submit" type="submit" value="Log In">
   <br><br>
   <button class="guest">Guest Login</button>
 </form>

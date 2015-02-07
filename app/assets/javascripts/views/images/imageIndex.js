@@ -4,6 +4,7 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.collection = options.collection;
     this.model = options.model;
+    this.randomize = options.randomize
 
     this.collection.each(function(img) {
       var imgLI = new ModelFindrApp.Views.ImageIndexItem({model: img})
@@ -26,10 +27,12 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+    
     this.$(".img-list").justifiedGallery({
       lastRow: 'nojustify',
       rowHeight: 300,
-      margins: 5
+      margins: 5,
+      randomize: this.randomize
     });
 
     return this;

@@ -70,6 +70,7 @@
   border: 1px solid;
   border-radius: 10px;
   background-color: #eee;
+  min-height: 900px;
 }
 
  #main li {
@@ -81,8 +82,7 @@ body {
   background-size: 100%;
 }
 
-button
-{
+button, .submit {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
@@ -104,12 +104,15 @@ button
   color: #FFF;
 
   transition: all 0.5s;
-  text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #11b8cc
+  text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #11b8cc;
 }
 
-button:hover, button:active
-{
+button:hover, button:active {
   text-decoration: none;
   color: #11b8cc;
   background: #FFF;
+}
+
+button:focus {
+  box-shadow: 0em 1em 2em black;
 }

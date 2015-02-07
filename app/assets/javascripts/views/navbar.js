@@ -10,6 +10,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
 
   render: function() {
     this.$el.addClass("navbar")
+    this.$el.attr("id", "navbar")
     this.$el.html(this.template())
     return this;
   },

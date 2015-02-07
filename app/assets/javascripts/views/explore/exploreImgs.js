@@ -3,9 +3,11 @@ ModelFindrApp.Views.ExploreImgs = Backbone.CompositeView.extend({
 
   initialize: function(options) {
     this.collection = options.collection;
+    this.randomize = options.randomize;
 
     var imgIndex = new ModelFindrApp.Views.ImageIndex({
       collection: this.collection,
+      randomize: this.randomize
     });
     this.addSubview('.imgs', imgIndex);
 
