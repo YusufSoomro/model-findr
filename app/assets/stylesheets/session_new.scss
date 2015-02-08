@@ -5,10 +5,11 @@
 #new-session-form {
   overflow: hidden;
   width: 500px;
+  height: 100vh;
   margin-left: 50px;
   background: white;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 #new-session-form img {
@@ -17,4 +18,12 @@
 
 .guest {
   margin-bottom: 20px;
+  background-color: #CC6600;
+}
+
+.guest:hover, .guest:active, .guest:focus {
+  text-decoration: none;
+  color: #CC6600;
+  background: #FFF;
+  box-shadow: 0em 1em 2em black;
 }

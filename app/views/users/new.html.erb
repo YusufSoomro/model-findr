@@ -1,5 +1,7 @@
 <form id="new-user-form" action="<%= users_url %>" method="post">
-  <h1>Sign Up</h1>
+  <img src="https://www.filepicker.io/api/file/q49noi2xQdqHLKhRIxxo">
+
+  <h6>New Account</h6>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <label>
@@ -23,15 +25,15 @@
       <option value="Photographer">Photographer</option>
       <option value="Model">Model</option>
     </select>
-  </label><br>
+  </label>
 
   <label>
     Gender<br>
     <select name="user[gender]">
-      <option value="Male">M</option>
-      <option value="Female">F</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
     </select>
-  </label><br>
+  </label>
 
   <label>
     City<br>
@@ -40,7 +42,7 @@
     </select>
   </label><br>
 
-  <input type="submit" value="Create Account">
+  <input class="submit" type="submit" value="Sign Up">
   <br><br>
   <button class="guest">Guest Login</button>
 </form>

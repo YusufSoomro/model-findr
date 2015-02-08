@@ -3,7 +3,7 @@ ModelFindrApp.Views.UserPortfolio = Backbone.CompositeView.extend({
 
   events: {
     "click .profile-btn": "backToProfile",
-    "click .upload-btn": "uploadImage"
+    "click .upload-btn": "uploadImages"
   },
 
   initialize: function(options) {
@@ -30,23 +30,29 @@ ModelFindrApp.Views.UserPortfolio = Backbone.CompositeView.extend({
     Backbone.history.navigate("users/" + this.model.id, {trigger: true})
   },
 
-  uploadImage: function(event) {
+  uploadImages: function () {
     var that = this;
 
-    filepicker.pick(
+    filepicker.pickMultiple(
       {
         mimetypes: ['image/*', 'text/plain'],
         container: 'modal',
         services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
       },
-      function(blob){
-        var newImage = new ModelFindrApp.Models.Image({
-          user_id: this.model.id,
-          img_url: blob.url,
-          user_city: this.model.get('city')
-        });
+      function(blobs){
 
-        newImage.save();
+        _.each(blobs, function(blob) {
+          var newImage = new ModelFindrApp.Models.Image({
+            user_id: this.model.id,
+            img_url: blob.url,
+            user_city: this.model.get('city')
+          });
+
+          debugger;
+
+          newImage.save();
+        }, this)
+
       }.bind(that),
       function(FPError){
         console.log(FPError.toString());

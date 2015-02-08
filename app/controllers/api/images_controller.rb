@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::ImagesController < ApplicationController
   before_action :require_signed_in!
 
@@ -15,6 +17,8 @@ class Api::ImagesController < ApplicationController
     @current_user = current_user
 
     if params[:your_city]
+      byebug
+
       @images = Image.order(id: :desc)
         .where("user_city = ?", current_user.city)
         .limit(20)

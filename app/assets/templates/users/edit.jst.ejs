@@ -1,9 +1,10 @@
 <form class="edit-form">
   <div id="sidebar" style="float: left; width: 30%;">
     <img id="avatar-img" src="<%= user.get('avatar_img') %>"/>
+    <button class="upload-btn">Set Avatar</button>
     <br>
-    <h2>Details</h2>
-    <ul id="user-details">
+    <h2 class="user-details">Details</h2>
+    <ul class="user-details">
 
       <li> <strong>Compensation:</strong>
         <select class="compensation-input" name="user[compensation]">
@@ -27,7 +28,9 @@
 
   <div id="content" style="float: left; width: 60%;">
     <div class="user-general-info">
-      <h1><%= user.get('username') %></h1> <button class="upload-btn">Set Avatar</button>
+      <h1><%= user.get('username') %></h1>
+      <input id="edit-btn2" class="submit" type="submit" value="Save">
+      <button id="edit-btn1">Profile</button>
 
 
       <label>
@@ -62,8 +65,4 @@
       <textarea class="about-me-input" name="user[about_me]" rows="8" cols="75"><%= user.get('about_me') %></textarea>
     </div>
   </div>
-
-
-  <input class="submit-btn" type="submit" value="Save Changes">
-  <button class="user-profile-btn">Back to Profile</button>
 </form>

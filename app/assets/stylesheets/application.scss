@@ -64,7 +64,6 @@
  }
 
 #main {
-  width: 90%;
   overflow: auto;
   margin: auto;
   border: 1px solid;
@@ -107,12 +106,9 @@ button, .submit {
   text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #11b8cc;
 }
 
-button:hover, button:active {
+button:hover, button:active, .submit:hover, .submit:active, button:focus {
   text-decoration: none;
   color: #11b8cc;
   background: #FFF;
-}
-
-button:focus {
   box-shadow: 0em 1em 2em black;
 }

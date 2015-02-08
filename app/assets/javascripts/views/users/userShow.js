@@ -38,20 +38,26 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
   uploadPhoto: function () {
     var that = this;
 
-    filepicker.pick(
+    filepicker.pickMultiple(
       {
         mimetypes: ['image/*', 'text/plain'],
         container: 'modal',
         services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
       },
-      function(blob){
-        var newImage = new ModelFindrApp.Models.Image({
-          user_id: this.model.id,
-          img_url: blob.url,
-          user_city: this.model.get('city')
-        });
+      function(blobs){
 
-        newImage.save();
+        _.each(blobs, function(blob) {
+          var newImage = new ModelFindrApp.Models.Image({
+            user_id: this.model.id,
+            img_url: blob.url,
+            user_city: this.model.get('city')
+          });
+
+          debugger;
+
+          newImage.save();
+        }, this)
+
       }.bind(that),
       function(FPError){
         console.log(FPError.toString());

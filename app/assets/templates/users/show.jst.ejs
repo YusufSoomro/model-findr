@@ -1,8 +1,8 @@
 <div id="sidebar" style="float: left; width: 30%;">
   <img id="avatar-img" src="<%= user.get('avatar_img') %>"/>
   <br>
-  <h2>Details</h2>
-  <ul id="user-details">
+  <h2 class="user-details">Details</h2>
+  <ul class="user-details">
     <li> <strong>Compensation:</strong> <%= user.get('compensation') %></li>
     <br>
     <li> <strong>Experience:</strong> <%= user.get('experience') %></li>
@@ -13,8 +13,8 @@
   <div class="user-general-info">
 
     <% if (ModelFindrApp.currentUserId === parseInt(user.id)) { %>
+      <button id="photo-btn">Upload</button>
       <button id="edit-btn">Edit Profile</button>
-      <button id="photo-btn">Upload Photo</button>
     <% } %>
 
     <div id="exampleDropPane"></div>
