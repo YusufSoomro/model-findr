@@ -36,6 +36,11 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
   },
 
   uploadPhoto: function () {
+    if (ModelFindrApp.currentUserId === 12) {
+      alert("Sorry, you can't do that unless you create an account with us!");
+      return;
+    }
+
     var that = this;
 
     filepicker.pickMultiple(
@@ -72,6 +77,11 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
 
   navToEdit: function(event) {
     event.preventDefault();
+    if (ModelFindrApp.currentUserId === 12) {
+      alert("Sorry, you can't do that unless you create an account with us!");
+      return;
+    }
+
     Backbone.history.navigate("users/" + this.model.id + "/edit", {trigger: true})
   }
 })

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @user = User.new
     render 'sessions/new'
   end
 
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
       login!(@user)
       redirect_to root_url
     else
+      @user = User.new(user_params)
       flash.now[:error] = "Wrong combination of email/password"
       render 'sessions/new'
     end
@@ -22,4 +24,9 @@ class SessionsController < ApplicationController
     logout!
     render json: {}
   end
+
+  private
+    def user_params
+      params.require(:user).permit(:email)
+    end
 end

@@ -2,6 +2,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
   template: JST['navbar'],
 
   events: {
+    "click #logo": "exploreImgsPage",
     "click #sign-out": "signOut",
     'click #profile': "profilePage",
     'click #explore': "exploreImgsPage",

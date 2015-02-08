@@ -6,12 +6,12 @@
 
   <label>
     Email<br>
-    <input type="text" name="user[email]">
+    <input type="text" name="user[email]" value="<%= @user.email %>">
   </label><br>
 
   <label>
     Username<br>
-    <input type="text" name="user[username]">
+    <input type="text" name="user[username]" value="<%= @user.username %>">
   </label><br>
 
   <label>
@@ -40,9 +40,11 @@
     <select name="user[city]">
       <option value="San Leandro, CA">San Leandro, CA</option>
     </select>
-  </label><br>
+  </label><br><br>
 
   <input class="submit" type="submit" value="Sign Up">
+  <br>
+  <a class="switch-link" href="/session/new">Log In</a>
   <br><br>
-  <button class="guest">Guest Login</button>
+  <%= button_to "About", about_url, class: "about", method: :get %>
 </form>

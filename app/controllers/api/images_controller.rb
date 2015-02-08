@@ -17,13 +17,17 @@ class Api::ImagesController < ApplicationController
     @current_user = current_user
 
     if params[:your_city]
-      byebug
-
-      @images = Image.order(id: :desc)
-        .where("user_city = ?", current_user.city)
-        .limit(20)
+      ## Why the fuck?....
+      @images = Image.joins('LEFT OUTER JOIN image_likes ON images.id = image_likes.image_id')
+       .where("user_city = ?", current_user.city)
+       .order("COUNT(image_likes.id)")
+       .group("images.id")
+       .limit(20)
     else
-      @images = Image.order(id: :desc).limit(20)
+      @images = Image.joins(:image_likes)
+        .order('COUNT(image_likes.id)')
+        .group('images.id')
+        .limit(20)
     end
 
     render 'api/images/index.json.jbuilder'

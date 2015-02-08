@@ -1,10 +1,12 @@
 <% var headerString = ModelFindrApp.currentUserId === user.id ? "My Portfolio" : user.get('username') + "'s Portfolio" %>
 
-<h1><%= headerString %></h1>
-<% if (ModelFindrApp.currentUserId === parseInt(user.id)) { %>
-  <button class="upload-btn">Upload Photo</button>
-<% } %>
-<button class="profile-btn">Profile</button>
+<div class="portfolio-header">
+  <h6><%= headerString %></h6>
+  <button class="profile-btn">Profile</button>
+  <% if (ModelFindrApp.currentUserId !== 12 && ModelFindrApp.currentUserId === parseInt(user.id)) { %>
+    <button class="upload-btn">Upload Photo</button>
+  <% } %>
+</div>
 
 <div class="users-imgs">
 </div>

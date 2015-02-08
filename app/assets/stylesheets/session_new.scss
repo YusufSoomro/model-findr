@@ -16,12 +16,32 @@
   margin-left: 10px;
 }
 
-.guest {
-  margin-bottom: 20px;
-  background-color: #CC6600;
+.guest, .about {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #CC6600;
+
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+
+  top:0; right:0; bottom:0; left:0;
+
+  padding: 10px 5;
+  padding-top: 10px;
+  width: 180px;
+  height: 50px;
+
+  background: #CC6600;
+  border: 1px solid #CC6600;
+  color: #FFF;
+
+  transition: all 0.5s;
+  text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #CC6600;
 }
 
-.guest:hover, .guest:active, .guest:focus {
+.guest:hover, .guest:active, .guest:focus, .about:hover {
   text-decoration: none;
   color: #CC6600;
   background: #FFF;

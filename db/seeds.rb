@@ -29,7 +29,7 @@ User.create!(
     Fair. My career highpoint came in 1997 when I was chosen by Princess Diana
     of Wales to photograph her for Vanity Fair. I've been regularly employed by
     the British royal family ever since.",
-  experience: "Experienced",
+  experience: "Lots",
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/vsen4QYfTZy434bWWNbN"
 )
@@ -44,7 +44,7 @@ User.create!(
     Lauren, Pirelli, Abercrombie & Fitch, Revlon, and Gianni Versace, as well as
     my work for Vogue, GQ, Vanity Fair, Elle, Life, Interview, and Rolling Stone
     magazines.",
-  experience: "Experienced",
+  experience: "Lots",
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/UYFIIQuePCu2omhuqwTj"
 )
@@ -59,7 +59,7 @@ User.create!(
     obsessed with fashion & styling and living in Riverside, California. I went
     to school at my community college and it just wasn't fit for me. So now I'm
     currently involved in fashion and trying to make the best of it.",
-  experience: "Experienced",
+  experience: "Lots",
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/n6rjMIoSsCPm5u4fS3jm"
 )
@@ -78,7 +78,7 @@ User.create!(
     Mumbai and brought Up In Mumbai, Maharashtra (India). I am a Cosine Brother
     of film editor & director Santosh Kumar, and formal brother of film producer
     Mr Raajeev Oza",
-  experience: "Experienced",
+  experience: "Lots",
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/dC5uzihqRZCIUgDdZnnx"
 )
@@ -94,7 +94,7 @@ User.create!(
   I started acting. I figured it was time to get an account on this website
   since it has been growing more and more popular. I've landed many gigs on here
   :)",
-  experience: "Experienced",
+  experience: "Lots",
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/CIckhJPiTbaLLAYFcazJ"
 )
@@ -107,7 +107,7 @@ User.create!(
   city: "Santa Cruz, CA",
   about_me: "My full name is Scott Clinton Reeves Eastwood. I'm American actor
     and model. I am also the son of actor-director Clint Eastwood.",
-  experience: "Experienced",
+  experience: "Lots",
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/ZSDVHQRZTd26SoX8uyiy"
 )
@@ -309,3 +309,16 @@ User.all.each do |user|
     end
   end
 end
+
+# Guest User
+User.create!(
+  email: "guest19",
+  username: "guest_user",
+  password: "password",
+  skill_type: "Model",
+  gender: "Male",
+  city: "San Francisco, CA",
+  experience: "None",
+  compensation: "None",
+  avatar_img: "http://prancingthroughlife.com/wp-content/uploads/2014/03/na.jpg"
+)

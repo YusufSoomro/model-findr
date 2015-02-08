@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
   def root
     render 'static_pages/root'
   end
+
+  def about
+    render 'static_pages/about'
+  end
 end

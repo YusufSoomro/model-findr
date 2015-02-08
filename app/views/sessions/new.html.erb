@@ -7,16 +7,29 @@
   <label>
     Email
     <br>
-    <input type="text" name="user[email]">
+    <input class="user-email" type="text" name="user[email]" value="<%= @user.email %>">
   </label><br>
 
   <label>
     Password
     <br>
-    <input type="password" name="user[password]">
+    <input class="user-password" type="password" name="user[password]">
   </label><br><br>
 
   <input class="submit" type="submit" value="Log In">
+  <br>
+  <a class="switch-link" href="/users/new">Sign Up</a>
   <br><br>
   <button class="guest">Guest Login</button>
+  <br><br>
+  <%= button_to "About", about_url, method: :get, class: "about" %>
+
+  <script charset="utf-8">
+    $('.guest').on("click", function(event) {
+      event.preventDefault();
+      $('.user-email').val("guest19");
+      $('.user-password').val("password");
+      $('input[type=submit]').click();
+    })
+  </script>
 </form>

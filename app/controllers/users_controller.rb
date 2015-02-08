@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
     render 'users/new'
   end
 
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
       login!(@user)
       redirect_to root_url
     else
-      render json: @user.errors.full_messages
+      render 'users/new'
     end
   end
 
