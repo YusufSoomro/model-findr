@@ -1,4 +1,22 @@
 class Api::UsersController < ApplicationController
+
+  def index
+    if params[:your_city]
+      @users = User.joins('LEFT OUTER JOIN user_views ON users.id = user_views.user_id')
+       .where("city = ?", current_user.city)
+       .order("COUNT(user_views.id)")
+       .group("users.id")
+       .limit(20)
+    else
+      @users = User.joins(:user_views)
+        .order("COUNT(user_views.id)")
+        .group("users.id")
+        .limit(20)
+    end
+
+    render 'api/users/index.json.jbuilder'
+  end
+
   def show
     @user = User.find(params[:id])
     render 'api/users/show.json.jbuilder'

@@ -11,7 +11,9 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     "users/:id/portfolio": "userPortfolio",
     "users/:id/edit": "editProfile",
     "explore_imgs": "exploreImgs",
-    "city_imgs": "cityImgs"
+    "explore_users": "exploreUsers",
+    "city_imgs": "cityImgs",
+    "city_users": "cityUsers"
   },
 
   navbar: function() {
@@ -57,6 +59,14 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     this._swapView(exploreView);
   },
 
+  exploreUsers: function() {
+    var exploreView = new ModelFindrApp.Views.ExploreUsers({
+      collection: this.exploreUsersCollection()
+    })
+
+    this._swapView(exploreView)
+  },
+
   cityImgs: function() {
     var cityView = new ModelFindrApp.Views.CityImgs({
       collection: this.cityImgCollection(),
@@ -64,6 +74,14 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     });
 
     this._swapView(cityView);
+  },
+
+  cityUsers: function() {
+    var cityView = new ModelFindrApp.Views.CityUsers({
+      collection: this.cityUsersCollection()
+    })
+
+    this._swapView(cityView)
   },
 
   _swapView: function(view) {
@@ -86,6 +104,17 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     }
   },
 
+  exploreUsersCollection: function() {
+    if (this._expUserCollection) {
+      return this.expUsersCollection;
+    } else {
+      this.expUsersCollection = new ModelFindrApp.Collections.Users;
+      this.expUsersCollection.fetch();
+
+      return this.expUsersCollection;
+    }
+  },
+
   cityImgCollection: function() {
     if (this._cityImgCollection) {
       return this._cityImgCollection;
@@ -94,6 +123,17 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
       this._cityImgCollection.fetch({ data: { your_city: true} });;
 
       return this._cityImgCollection;
+    }
+  },
+
+  cityUsersCollection: function() {
+    if (this._cityUsersCollection) {
+      return this._cityUsersCollection;
+    } else {
+      this._cityUsersCollection = new ModelFindrApp.Collections.Users;
+      this._cityUsersCollection.fetch({ data: { your_city: true} });
+
+      return this._cityUsersCollection;
     }
   }
 })

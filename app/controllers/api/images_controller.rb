@@ -17,7 +17,6 @@ class Api::ImagesController < ApplicationController
     @current_user = current_user
 
     if params[:your_city]
-      ## Why the fuck?....
       @images = Image.joins('LEFT OUTER JOIN image_likes ON images.id = image_likes.image_id')
        .where("user_city = ?", current_user.city)
        .order("COUNT(image_likes.id)")

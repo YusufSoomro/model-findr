@@ -1,6 +1,10 @@
 ModelFindrApp.Views.ExploreImgs = Backbone.CompositeView.extend({
   template: JST['explore/exploreImgs'],
 
+  events: {
+    "click .explore-users": "navToExpUsers"
+  },
+
   initialize: function(options) {
     this.collection = options.collection;
     this.randomize = options.randomize;
@@ -19,5 +23,10 @@ ModelFindrApp.Views.ExploreImgs = Backbone.CompositeView.extend({
     this.attachSubviews();
 
     return this;
+  },
+
+  navToExpUsers: function(event) {
+    event.preventDefault();
+    Backbone.history.navigate("explore_users", {trigger: true})
   }
 })

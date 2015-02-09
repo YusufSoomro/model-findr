@@ -17,6 +17,7 @@
 //= require underscore
 //= require backbone
 //= require jquery.justifiedGallery.min
+
 //= require model_findr_app
 //= require_tree ../templates
 //= require_tree ./utils

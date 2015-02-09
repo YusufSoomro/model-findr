@@ -2,7 +2,7 @@ ModelFindrApp.Views.CityImgs = Backbone.CompositeView.extend({
   template: JST['city/cityImgs'],
 
   events: {
-    "click .city-imgs": "navToCityImgs"
+    "click .city-users": "navToCityUsers"
   },
 
   initialize: function(options) {
@@ -25,9 +25,9 @@ ModelFindrApp.Views.CityImgs = Backbone.CompositeView.extend({
     return this;
   },
 
-  navToCityImgs: function(event) {
+  navToCityUsers: function(event) {
     event.preventDefault();
 
-    Backbone.history.navigate("city_imgs", {trigger: true})
+    Backbone.history.navigate("city_users", {trigger: true})
   }
 })
