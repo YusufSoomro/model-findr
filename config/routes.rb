@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :update, :index]
     resources :images, only: [:create, :show, :index]
     resources :image_likes, only: [:create]
+    resources :user_views, only: [:create]
   end
 end

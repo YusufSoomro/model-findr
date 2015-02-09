@@ -1,14 +1,20 @@
 <div class="user-avatar-img">
   <img src="<%= user.get('avatar_img') %>">
-  <span><%= user.get('num_views') %> views</span>
+  <span>
+    <% if (user.get('num_views') === 1)  { %>
+      <%= user.get('num_views') %> view
+    <% } else { %>
+      <%= user.get('num_views') %> views
+    <% } %>
+  </span>
 </div>
 
 
 <a href="#users/<%= user.id %>/portfolio" target="_blank">View Portfolio</a><br>
 <a href="#users/<%= user.id %>" target="_blank"><%= user.get('username') %></a><br>
 
-<%= user.get('skill_type') %><br>
 <%= user.get('gender') %><br>
+<%= user.get('skill_type') %><br>
 
 Experience: <%= user.get('experience') %><br>
 Compensation: <%= user.get('compensation') %><br>

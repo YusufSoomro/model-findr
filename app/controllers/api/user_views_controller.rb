@@ -1,5 +1,5 @@
 class Api::UserViewsController < ApplicationController
-  before_action :require_signed_in
+  before_action :require_signed_in!
 
   def create
     @user_view = UserView.new(user_view_params)

@@ -7,7 +7,7 @@
   width: 300px;
   text-align: center;
   margin: 10px;
-  background: white;
+  background: #F0F8FF;
   border-radius: 5%;
   float: left;
   float: top;
@@ -16,9 +16,12 @@
 .user-avatar-img {
   background-color: black;
   overflow: auto;
+  color: #11b8cc;
 }
 
 .user-avatar-img img {
   width: 93%;
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }

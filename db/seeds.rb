@@ -306,6 +306,7 @@ User.all.each do |user|
   User.first(6).each do |exp_user|
     exp_user.images.each do |img|
       ImageLike.create!(image_id: img.id, liker_id: user.id)
+      UserView.create!(user_id: exp_user.id)
     end
   end
 end

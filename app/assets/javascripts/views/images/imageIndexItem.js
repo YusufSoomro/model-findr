@@ -3,6 +3,7 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
 
   events: {
     "click .glyphicon-heart": "makeImgLike",
+    "click a": "createUserView"
   },
 
   render: function() {
@@ -21,7 +22,7 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
   makeImgLike: function(event) {
     event.preventDefault();
     if (ModelFindrApp.currentUserId === 12) {
-      alert("Sorry, you can't do that unless you create an account with us!");
+      alert("Sorry, you have to create an account with us to do that.");
       return;
     }
 
@@ -40,6 +41,19 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
       }.bind(that),
       error: function() {
         console.log("Lol, you can't like that twice newb.");
+      }
+    })
+  },
+
+  createUserView: function() {
+    var newUserView = new ModelFindrApp.Models.UserView;
+
+    newUserView.save({user_id: this.model.get('user_id')}, {
+      success: function() {
+        console.log("awwww yeeeaaaah!! User_view created, biatch");
+      },
+      error: function() {
+        console.log("oh neeewww. Couldn't create the user_view");
       }
     })
   }
