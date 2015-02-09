@@ -72,6 +72,11 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
 
   navToPortfolio: function(event) {
     event.preventDefault();
+
+    if (ModelFindrApp.currentUserId === 12) {
+      alert("You're a guest, silly. There's nothing in your portfolio.");
+      return;
+    }
     Backbone.history.navigate('users/' + this.model.id + '/portfolio', {trigger: true})
   },
 
