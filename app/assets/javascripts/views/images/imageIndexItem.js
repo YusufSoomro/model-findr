@@ -9,8 +9,11 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
 
   tagName: 'a',
 
-  initialize: function () {
-    this.$el.addClass("img-gallery").attr('href', this.model.get('img_url'))
+  initialize: function (options) {
+    this.model = options.model;
+    this.collection = options.collection
+
+    this.$el.addClass("img-gallery").attr('href', this.model.get('img_url'));
   },
 
   render: function() {
@@ -70,13 +73,14 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
 
     if(!this.modalsAdded) {
       var boxView = new ModelFindrApp.Views.ImageBox({
-        url: $(event.currentTarget).attr("src"),
-        userUsername: $(event.currentTarget).data("user-name"),
-        userId: $(event.currentTarget).data("user-id")
+        url: this.model.get('img_url'),
+        userUsername: this.model.get('author_username'),
+        userId: this.model.get('user_id'),
+        imgCount: $(event.currentTarget).data("img-count")
       });
 
-      $('body').append(boxView.render().$el);
-      this.modalsAdded = true
+      $(document).find('.imgs').append(boxView.render().$el);
+      this.modalsAdded = true;
     }
   }
 })

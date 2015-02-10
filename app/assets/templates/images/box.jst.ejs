@@ -8,17 +8,3 @@
       by <a href="#users/<%= userId %>" target="_blank"><%= userUsername %></a>
   </div>
 </div>
-
-<script charset="utf-8">
-  $(function() {
-    var thingsToTransition = ['.img-backdrop', '#chevron-left', '#chevron-right',
-      '.img-box', '.box-img', 'box-caption']
-
-    _.each(thingsToTransition, function(selector) {
-      $(selector).style.opacity = 0;
-
-      window.getComputedStyle($(selector)).opacity;
-
-      $(selector).style.opacity = 1
-    })
-</script>

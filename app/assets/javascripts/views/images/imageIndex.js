@@ -2,7 +2,8 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
   template: JST['images/imageIndex'],
 
   events: {
-    "click img": "makeModalView"
+    "click #chevron-left": "moveLeft",
+    "click #chevron-right": "moveRight"
   },
 
   initialize: function (options) {
@@ -11,7 +12,7 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
     this.randomize = options.randomize
 
     this.collection.each(function(img) {
-      var imgLI = new ModelFindrApp.Views.ImageIndexItem({model: img, imgCount: imgCounter})
+      var imgLI = new ModelFindrApp.Views.ImageIndexItem({model: img})
       this.addSubview('.img-list', imgLI)
     }, this);
     this.listenTo(this.collection, 'add', this.addImage);
@@ -23,7 +24,7 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
   },
 
   addImage: function (image) {
-    var imgLI = new ModelFindrApp.Views.ImageIndexItem({model: image});
+    var imgLI = new ModelFindrApp.Views.ImageIndexItem({model: image, collection: this.collection});
     this.addSubview('.img-list', imgLI);
   },
 
@@ -41,7 +42,13 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
         randomize: view.randomize,
         rel: 'gallery1',
         waitThumbnailsLoad: false
-      })
+      }).on('jg.rowflush', function() {
+
+        $('.img').each( function(imgCount, img) {
+          $(img).attr("data-img-count", imgCount);
+        }.bind(this))
+        
+      }.bind(this))
     }, 0)
 
     return this;
