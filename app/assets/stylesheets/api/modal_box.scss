@@ -53,17 +53,21 @@
 // }
 
 #chevron-left, #chevron-right {
-  transition: all 1s;
+  transition: all 500ms;
   position: fixed;
   z-index: 201;
-  color: white;
-  background: #11b8cc;
+  color: #11b8cc;
   font-size: 55px;
   width: 6%;
-  margin-right: 20px;
   height: 100vh;
   text-align: center;
   padding-top: 50vh;
+  cursor: pointer;
+}
+
+#chevron-left:hover, #chevron-right:hover {
+  background-color: #11b8cc;
+  color: white;
 }
 
 #chevron-left {

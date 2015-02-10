@@ -3,7 +3,8 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
 
   events: {
     "click .glyphicon-heart": "makeImgLike",
-    "click a": "createUserView"
+    "click a": "createUserView",
+    "click img": "makeModalView"
   },
 
   tagName: 'a',
@@ -17,9 +18,6 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
       picture: this.model
     })
     this.$el.html(content);
-
-    $(this.$el.find('.img')).attr("data-user-name", this.model.get('author_username'))
-      .attr("data-user-id", this.model.get('user_id'));
 
     if (this.model.get('liked')) {
       this.$('.glyphicon-heart').css("color", "red")
@@ -65,5 +63,20 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
         console.log("oh neeewww. Couldn't create the user_view");
       }
     })
+  },
+
+  makeModalView: function(event) {
+    event.preventDefault();
+
+    if(!this.modalsAdded) {
+      var boxView = new ModelFindrApp.Views.ImageBox({
+        url: $(event.currentTarget).attr("src"),
+        userUsername: $(event.currentTarget).data("user-name"),
+        userId: $(event.currentTarget).data("user-id")
+      });
+
+      $('body').append(boxView.render().$el);
+      this.modalsAdded = true
+    }
   }
 })
