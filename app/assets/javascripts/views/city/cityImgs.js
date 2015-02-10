@@ -9,11 +9,11 @@ ModelFindrApp.Views.CityImgs = Backbone.CompositeView.extend({
     this.collection = options.collection;
     this.randomize = options.randomize;
 
-    var imgIndex = new ModelFindrApp.Views.ImageIndex({
+    this.imgIndex = new ModelFindrApp.Views.ImageIndex({
       collection: this.collection,
       randomize: this.randomize
     });
-    this.addSubview('.imgs', imgIndex);
+    this.addSubview('.imgs', this.imgIndex);
 
     this.listenTo(this.collection, "sync", this.render);
   },

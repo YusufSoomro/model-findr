@@ -1,0 +1,75 @@
+.img-box {
+  transition: all 1s;
+  position: fixed;
+  margin: 0 auto;
+  background-color: white;
+  z-index: 150;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  > img {
+    max-height: 80%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+  }
+}
+
+.img-backdrop {
+  transition: all 1s;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.box-caption {
+  transition: all 1s;
+  text-align: center;
+}
+
+// #chev-left-box, #chev-right-box {
+//   position: fixed;
+//   width: 6%;
+//   z-index: 200;
+//   background-color: white;
+//   height:100%;
+//   content: '';
+//   :hover {
+//     cursor: pointer;
+//   }
+// }
+//
+// #chev-left-box {
+//   left: 0;
+// }
+//
+// #chev-right-box {
+//   right: 0;
+// }
+
+#chevron-left, #chevron-right {
+  transition: all 1s;
+  position: fixed;
+  z-index: 201;
+  color: white;
+  background: #11b8cc;
+  font-size: 55px;
+  width: 6%;
+  margin-right: 20px;
+  height: 100vh;
+  text-align: center;
+  padding-top: 50vh;
+}
+
+#chevron-left {
+  left: 0;
+}
+
+#chevron-right {
+  right: 0;
+}

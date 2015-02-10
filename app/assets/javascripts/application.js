@@ -16,8 +16,7 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require backbone
-//= require jquery.justifiedGallery.min
-
+//= require jquery.justifiedGallery
 //= require model_findr_app
 //= require_tree ../templates
 //= require_tree ./utils

@@ -1,11 +1,13 @@
-<img src="<%= picture.get("img_url") %>">
-<div class="caption">
-    by <a href="#users/<%= picture.get('user_id') %>" target="_blank"><%= picture.get('author_username') %></a>
 
-    <div class="heart-shit">
-      <span class="glyphicon glyphicon-heart"></span>
-      x<span id="num-likes" data-id="<%= picture.get('num_likes') %>">
-        <%= picture.get('num_likes') %>
-      </span>
-    </div>
-</div>
+  <img class="img" src="<%= picture.get("img_url") %>">
+
+  <div class="caption">
+      by <a href="#users/<%= picture.get('user_id') %>" target="_blank"><%= picture.get('author_username') %></a>
+
+      <div class="heart-shit">
+        <span class="glyphicon glyphicon-heart"></span>
+        x<span id="num-likes" data-id="<%= picture.get('num_likes') %>">
+          <%= picture.get('num_likes') %>
+        </span>
+      </div>
+  </div>

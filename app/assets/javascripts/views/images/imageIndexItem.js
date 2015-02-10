@@ -6,11 +6,20 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
     "click a": "createUserView"
   },
 
+  tagName: 'a',
+
+  initialize: function () {
+    this.$el.addClass("img-gallery").attr('href', this.model.get('img_url'))
+  },
+
   render: function() {
     var content = this.template({
       picture: this.model
     })
     this.$el.html(content);
+
+    $(this.$el.find('.img')).attr("data-user-name", this.model.get('author_username'))
+      .attr("data-user-id", this.model.get('user_id'));
 
     if (this.model.get('liked')) {
       this.$('.glyphicon-heart').css("color", "red")

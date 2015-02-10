@@ -1,6 +1,10 @@
 ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
   template: JST['images/imageIndex'],
 
+  events: {
+    "click img": "makeModalView"
+  },
+
   initialize: function (options) {
     this.collection = options.collection;
     this.model = options.model;
@@ -27,14 +31,34 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+    var view = this;
 
-    this.$(".img-list").justifiedGallery({
-      lastRow: 'nojustify',
-      rowHeight: 300,
-      margins: 5,
-      randomize: this.randomize
-    });
+    setTimeout(function () {
+      view.$(".img-list").justifiedGallery({
+        lastRow: 'nojustify',
+        rowHeight: 300,
+        margins: 5,
+        randomize: view.randomize,
+        rel: 'gallery1',
+        waitThumbnailsLoad: false
+      })
+    }, 0)
 
     return this;
+  },
+
+  makeModalView: function(event) {
+    event.preventDefault();
+
+    if(!this.modalsAdded) {
+      var boxView = new ModelFindrApp.Views.ImageBox({
+        url: $(event.currentTarget).attr("src"),
+        userUsername: $(event.currentTarget).data("user-name"),
+        userId: $(event.currentTarget).data("user-id")
+      });
+
+      $('body').append(boxView.render().$el);
+      this.modalsAdded = true
+    }
   }
 })
