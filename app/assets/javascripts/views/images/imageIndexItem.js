@@ -22,8 +22,8 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
     })
     this.$el.html(content);
 
-    this.$('.img').data("author-username", this.model.get('author_username'))
-      .data('user-id', this.model.get('user_id'))
+    this.$('.img').attr("data-author-username", this.model.get('author_username'))
+      .attr('data-user-id', this.model.get('user_id'))
 
     if (this.model.get('liked')) {
       this.$('.glyphicon-heart').css("color", "red")

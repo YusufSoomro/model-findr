@@ -145,7 +145,7 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
       return this._cityImgCollection;
     } else {
       this._cityImgCollection = new ModelFindrApp.Collections.Images;
-      this._cityImgCollection.fetch({ data: { your_city: true} });;
+      this._cityImgCollection.fetch({ data: { your_city: true } });
 
       return this._cityImgCollection;
     }

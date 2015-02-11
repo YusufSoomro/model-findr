@@ -51,7 +51,7 @@
 
       <label>
         City
-        <input type="text" name="user[city]" value="<%= user.get('city') %>">
+        <input id="searchTextField" type="text" name="user[city]" value="<%= user.get('city') %>">
       </label><br><br>
 
       <label>
@@ -66,3 +66,18 @@
     </div>
   </div>
 </form>
+
+
+<script charset="utf-8">
+  function initialize() {
+    var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: "us"}
+    };
+
+    var input = document.getElementById('searchTextField');
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+  }
+
+  initialize()
+</script>

@@ -20,23 +20,29 @@ ModelFindrApp.Views.ImageBox = Backbone.CompositeView.extend({
   },
 
   moveLeft: function (event) {
-    if (parseInt(this.imgCount) - 1 > -1) {
-      var nextCount = parseInt(this.imgCount) - 1;
-      this.imgCount = nextCount;
+    if (parseInt(this.imgCount) - 1 === -1) {
+      return;
     }
 
-    var nextImg = $('.img-list').find("[data-img-count='" + this.imgCount + "']");
-    this.url = nextImg.attr("src")
+    var nextCount = parseInt(this.imgCount) - 1;
+    var nextImg = $('.img-list').find("[data-img-count='" + nextCount + "']");
+
+    this.url = nextImg.attr("src");
+    this.userUsername = nextImg.data("author-username");
+    this.userId = nextImg.data("user-id");
+    this.imgCount = nextCount;
     this.render();
   },
 
   moveRight: function (event) {
     var nextCount = parseInt(this.imgCount) + 1;
     var nextImg = $('.img-list').find("[data-img-count='" + nextCount + "']");
-    
+
     if (nextImg.length > 0) {
-      this.imgCount = nextCount
-      this.url = nextImg.attr("src")
+      this.url = nextImg.attr("src");
+      this.userUsername = nextImg.data("author-username");
+      this.userId = nextImg.data("user-id");
+      this.imgCount = nextCount;
       this.render();
     }
   },
