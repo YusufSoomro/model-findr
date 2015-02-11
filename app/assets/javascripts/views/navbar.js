@@ -70,10 +70,10 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
       })
     }
   },
+
   initGMapsAutoComplete: function(){
-    debugger
     this.$('.twitter-typeahead').remove();
-    // $("<input type='text' id='searchTextField' placeholder=' i.e. San Francisco, CA, United States'>").insertAfter("#city-or-users")
+    $("<input type='text' id='searchTextField' placeholder=' i.e. San Francisco, CA, United States'>").insertAfter("#city-or-users")
       var options = {
         types: ['(cities)'],
         componentRestrictions: {country: "us"}
@@ -88,6 +88,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
     this.completion = $(event.currentTarget).val();
     this.installCompletionEngine();
   },
+
   installCompletionEngine: function(){
     if(this.completion == 'city'){
       this.initGMapsAutoComplete();
@@ -127,7 +128,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
           var states = ModelFindrApp.USERNAMES;
 
           this.$('#searchTextField').typeahead({
-            hint: true,
+            // hint: false,
             highlight: true,
             minLength: 1
           },
@@ -135,86 +136,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
             name: 'states',
             displayKey: 'value',
             source: substringMatcher(states)
-          }).blur(validateSelection);
-
-          function validateSelection() {
-              if ($.inArray($(this).val(), myData) === -1)
-                  alert('Error : element not in list!');
-          }
+          })
   },
 
-  installHandlers: function() {
-    // this.initGMapsAutoComplete();
-    // $(function() {
-    //
-    //
-    //   initialize();
-    //
-    //
-    //   $('#city-or-users').on("change", function() {
-    //     if ($('#city-or-users').val() === "city") {
-    //       $('.twitter-typeahead').remove()
-    //       $("<input type='text' name='city' id='searchTextField' value='' placeholder=' i.e. San Francisco, CA, United States'>").insertAfter("#city-or-users")
-    //
-    //
-    //       function initialize() {
-    //         var options = {
-    //           types: ['(cities)'],
-    //           componentRestrictions: {country: "us"}
-    //         };
-    //
-    //         var input = document.getElementById('searchTextField');
-    //         var autocomplete = new google.maps.places.Autocomplete(input, options);
-    //       };
-    //
-    //       initialize();
-    //     } else {
-    //       $('#searchTextField').remove()
-    //       $("<input type='text' id='searchTextField' value='' placeholder=' i.e. iamgalla'>").insertAfter("#city-or-users")
-    //
-    //       var substringMatcher = function(strs) {
-    //         return function findMatches(q, cb) {
-    //           var matches, substrRegex;
-    //
-    //           // an array that will be populated with substring matches
-    //           matches = [];
-    //
-    //           // regex used to determine if a string contains the substring `q`
-    //           substrRegex = new RegExp(q, 'i');
-    //
-    //           // iterate through the pool of strings and for any string that
-    //           // contains the substring `q`, add it to the `matches` array
-    //           $.each(strs, function(i, str) {
-    //             if (substrRegex.test(str)) {
-    //               // the typeahead jQuery plugin expects suggestions to a
-    //               // JavaScript object, refer to typeahead docs for more info
-    //               matches.push({ value: str });
-    //             }
-    //           });
-    //
-    //           cb(matches);
-    //         };
-    //       };
-    //
-    //       var states = ModelFindrApp.USERNAMES;
-    //
-    //       $('#searchTextField').typeahead({
-    //         hint: true,
-    //         highlight: true,
-    //         minLength: 1
-    //       },
-    //       {
-    //         name: 'states',
-    //         displayKey: 'value',
-    //         source: substringMatcher(states)
-    //       }).blur(validateSelection);
-    //
-    //       function validateSelection() {
-    //           if ($.inArray($(this).val(), myData) === -1)
-    //               alert('Error : element not in list!');
-    //       }
-    //     }
-    //   })
-    // })
-  }
 })

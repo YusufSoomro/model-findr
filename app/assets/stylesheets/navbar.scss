@@ -94,4 +94,30 @@
 #city-or-users {
   border-radius: 5%;
   background-color: #eee;
+  margin-right: 5px;
+}
+
+#search-bar-text {
+  cursor: default;
+}
+
+input.tt-hint {
+    height: 30px;
+    padding: 0;
+    color: #C0C0C0;
+}
+
+.tt-dropdown-menu{
+  width: 300px;
+  background-color: white;
+  opacity: 1;
+}
+
+.tt-suggestion {
+  color: black;
+  text-shadow: 0 0 0;
+}
+
+.tt-suggestion:hover, .tt-suggestion.tt-cursor {
+  background: #C0C0C0;
 }

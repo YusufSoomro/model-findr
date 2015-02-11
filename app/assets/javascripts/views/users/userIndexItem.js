@@ -1,7 +1,7 @@
 ModelFindrApp.Views.UserIndexItem = Backbone.View.extend({
   template: JST['users/indexItem'],
   className: 'user-item',
-  tagName: 'li',
+  tagName: 'div',
 
   events: {
     "click a": "createUserView"

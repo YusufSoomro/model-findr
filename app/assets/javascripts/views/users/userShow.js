@@ -74,7 +74,7 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
     event.preventDefault();
 
     if (ModelFindrApp.currentUserId === 12) {
-      alert("You're a guest, silly. There's nothing in your portfolio.");
+      alert("You're a guest, silly. Create an account with us to do that.");
       return;
     }
     Backbone.history.navigate('users/' + this.model.id + '/portfolio', {trigger: true})

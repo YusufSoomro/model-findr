@@ -18,6 +18,7 @@
 //= require backbone
 //= require jquery.justifiedGallery
 //= require typeahead.bundle
+//= require masonry.pkgd
 //= require model_findr_app
 //= require_tree ../templates
 //= require_tree ./utils
