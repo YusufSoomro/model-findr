@@ -6,7 +6,8 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
     "click #sign-out": "signOut",
     'click #profile': "profilePage",
     'click #explore': "exploreImgsPage",
-    'click #your-city': "cityImgsPage"
+    'click #your-city': "cityImgsPage",
+    'click #search-btn': "searchImgs"
   },
 
   render: function() {
@@ -41,5 +42,13 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
     event.preventDefault();
 
     Backbone.history.navigate("city_imgs", {trigger: true});
+  },
+
+  searchImgs: function(event) {
+    event.preventDefault();
+
+    var city = $('#searchTextField').val();
+
+    Backbone.history.navigate(encodeURI(city) + "/imgs", {trigger: true})
   }
 })

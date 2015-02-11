@@ -42,12 +42,10 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
         randomize: view.randomize,
         rel: 'gallery1',
         waitThumbnailsLoad: false
-      }).on('jg.rowflush', function() {
+      })
 
-        $('.img').each( function(imgCount, img) {
-          $(img).attr("data-img-count", imgCount);
-        }.bind(this))
-        
+      $('.img').each( function(imgCount, img) {
+        $(img).attr("data-img-count", imgCount);
       }.bind(this))
     }, 0)
 

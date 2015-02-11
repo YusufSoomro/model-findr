@@ -70,7 +70,6 @@
   margin: auto;
   margin-top: 0px;
   border: 1px solid;
-  border-radius: 10px;
   background-color: #eee;
   min-height: 900px;
 }
@@ -109,7 +108,7 @@ button, .submit {
   text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #11b8cc;
 }
 
-button:hover, button:active, .submit:hover, .submit:active, button:focus {
+button:hover, button:active, .submit:hover, .submit:active {
   text-decoration: none;
   color: #11b8cc;
   background: #FFF;

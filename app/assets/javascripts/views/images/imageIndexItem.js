@@ -22,6 +22,9 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
     })
     this.$el.html(content);
 
+    this.$('.img').data("author-username", this.model.get('author_username'))
+      .data('user-id', this.model.get('user_id'))
+
     if (this.model.get('liked')) {
       this.$('.glyphicon-heart').css("color", "red")
     }
@@ -71,16 +74,17 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
   makeModalView: function(event) {
     event.preventDefault();
 
-    if(!this.modalsAdded) {
-      var boxView = new ModelFindrApp.Views.ImageBox({
-        url: this.model.get('img_url'),
-        userUsername: this.model.get('author_username'),
-        userId: this.model.get('user_id'),
-        imgCount: $(event.currentTarget).data("img-count")
-      });
+    var boxView = new ModelFindrApp.Views.ImageBox({
+      url: this.model.get('img_url'),
+      userUsername: this.model.get('author_username'),
+      userId: this.model.get('user_id'),
+      imgCount: $(event.currentTarget).data("img-count")
+    });
 
-      $(document).find('.imgs').append(boxView.render().$el);
-      this.modalsAdded = true;
+    if ($('.imgs').length !== 0) {
+      $('.imgs').append(boxView.render().$el);
+    } else {
+      $('.users-imgs').append(boxView.render().$el);
     }
   }
 })

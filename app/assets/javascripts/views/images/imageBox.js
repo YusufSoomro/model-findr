@@ -33,7 +33,7 @@ ModelFindrApp.Views.ImageBox = Backbone.CompositeView.extend({
   moveRight: function (event) {
     var nextCount = parseInt(this.imgCount) + 1;
     var nextImg = $('.img-list').find("[data-img-count='" + nextCount + "']");
-
+    
     if (nextImg.length > 0) {
       this.imgCount = nextCount
       this.url = nextImg.attr("src")

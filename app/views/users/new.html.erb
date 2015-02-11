@@ -33,13 +33,11 @@
       <option value="Male">Male</option>
       <option value="Female">Female</option>
     </select>
-  </label>
+  </label><br><br>
 
   <label>
     City<br>
-    <select name="user[city]">
-      <option value="San Leandro, CA">San Leandro, CA</option>
-    </select>
+    <input type="text" name="user[city]" id="searchTextField">
   </label><br><br>
 
   <input class="submit" type="submit" value="Sign Up">
@@ -48,3 +46,18 @@
   <br><br>
   <%= button_to "About", about_url, class: "about", method: :get %>
 </form>
+
+
+<script charset="utf-8">
+  function initialize() {
+    var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: "us"}
+    };
+
+    var input = document.getElementById('searchTextField');
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+  }
+
+  initialize()
+</script>

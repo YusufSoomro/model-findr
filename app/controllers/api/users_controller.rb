@@ -7,6 +7,12 @@ class Api::UsersController < ApplicationController
        .order("COUNT(user_views.id)")
        .group("users.id")
        .limit(20)
+    elsif params[:city]
+      @users = User.joins('LEFT OUTER JOIN user_views ON users.id = user_views.user_id')
+       .where("city = ?", params[:city])
+       .order("COUNT(user_views.id)")
+       .group("users.id")
+       .limit(20)
     else
       @users = User.joins(:user_views)
         .order("COUNT(user_views.id)")

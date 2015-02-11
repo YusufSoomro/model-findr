@@ -13,7 +13,9 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     "explore_imgs": "exploreImgs",
     "explore_users": "exploreUsers",
     "city_imgs": "cityImgs",
-    "city_users": "cityUsers"
+    "city_users": "cityUsers",
+    ":city/imgs": "searchImgs",
+    ":city/users": "searchUsers"
   },
 
   navbar: function() {
@@ -84,6 +86,29 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
     this._swapView(cityView)
   },
 
+  searchImgs: function(city) {
+    var imgCollection = new ModelFindrApp.Collections.Images;
+    imgCollection.fetch({ data: { city: city } });
+
+    var searchImgsView = new ModelFindrApp.Views.SearchImgs({
+      collection: imgCollection,
+      city: city
+    });
+    this._swapView(searchImgsView)
+  },
+
+  searchUsers: function(city) {
+    var usersCollection = new ModelFindrApp.Collections.Users;
+    usersCollection.fetch({ data: { city: city } });
+
+    var searchUsersView = new ModelFindrApp.Views.SearchUsers({
+      collection: usersCollection,
+      city: city
+    });
+
+    this._swapView(searchUsersView)
+  },
+
   _swapView: function(view) {
     if (this._currentView) {
       this._currentView.remove();
@@ -131,7 +156,7 @@ ModelFindrApp.Routers.UserRouter = Backbone.Router.extend({
       return this._cityUsersCollection;
     } else {
       this._cityUsersCollection = new ModelFindrApp.Collections.Users;
-      this._cityUsersCollection.fetch({ data: { your_city: true} });
+      this._cityUsersCollection.fetch({ data: { your_city: true } });
 
       return this._cityUsersCollection;
     }

@@ -3,5 +3,23 @@
   <li id="explore">Explore</li>
   <li id="your-city">Your City</li>
   <li id="profile">Profile</li>
+  <li id="search-bar">
+    <input type="text" name="city" id="searchTextField" value="" placeholder="Search by City">
+    <button id="search-btn">Search</button>
+  </li>
   <li id="sign-out">Sign Out</li>
 </ul>
+
+<script charset="utf-8">
+  function initialize() {
+    var options = {
+      types: ['(cities)'],
+      componentRestrictions: {country: "us"}
+    };
+
+    var input = document.getElementById('searchTextField');
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+  }
+
+  initialize()
+</script>
