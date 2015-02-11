@@ -8,11 +8,9 @@
   filepicker.setKey("Aj6UeHtuxTf2ro7P6it1Ez");
 </script>
 
-<!-- // <script>
-//   $(function () {
-//     ModelFindr.CITIES = <%= User.all.pluck(:city) %>;
-//   })
-// </script> -->
+<script>
+    ModelFindrApp.USERNAMES = JSON.parse('<%= User.pluck(:username).to_json.html_safe %>');
+</script>
 
 <div id="main">
 </div>

@@ -1,4 +1,5 @@
 json.extract! @user,
+              :id,
               :email,
               :username,
               :password,
@@ -9,7 +10,7 @@ json.extract! @user,
               :experience,
               :compensation,
               :avatar_img
-              
+
 json.images do
   json.array! @user.images do |image|
     json.extract! image, :id, :user_id, :img_url, :caption, :user_city

@@ -24,7 +24,12 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if params[:username]
+      @user = User.where("username = '#{params[:username]}'").first
+    else
+      @user = User.find(params[:id])
+    end
+
     render 'api/users/show.json.jbuilder'
   end
 

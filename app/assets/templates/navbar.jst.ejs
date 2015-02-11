@@ -4,22 +4,15 @@
   <li id="your-city">Your City</li>
   <li id="profile">Profile</li>
   <li id="search-bar">
-    <input type="text" name="city" id="searchTextField" value="" placeholder="Search by City">
-    <button id="search-btn">Search</button>
+    <form>
+      Search By:
+      <select id="city-or-users" style="width: 75px;">
+        <option selected value="city">City</option>
+        <option value="users">Person</option>
+      </select>
+      <input type="text" name="city" id="searchTextField" value="" placeholder=" i.e. San Francisco, CA, United States">
+      <button id="search-btn">Search</button>
+    </form>
   </li>
   <li id="sign-out">Sign Out</li>
 </ul>
-
-<script charset="utf-8">
-  function initialize() {
-    var options = {
-      types: ['(cities)'],
-      componentRestrictions: {country: "us"}
-    };
-
-    var input = document.getElementById('searchTextField');
-    var autocomplete = new google.maps.places.Autocomplete(input, options);
-  }
-
-  initialize()
-</script>
