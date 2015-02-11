@@ -2,8 +2,7 @@ ModelFindrApp.Views.SearchImgs = Backbone.CompositeView.extend({
   template: JST['search/searchImgs'],
 
   events: {
-    "click .search-users": "navToSearcUsers",
-    "click .search-users": "navToSearchUsers"
+    "click .search-users": "navToSearcUsers"
   },
 
   initialize: function(options) {
@@ -30,7 +29,7 @@ ModelFindrApp.Views.SearchImgs = Backbone.CompositeView.extend({
   navToSearchUsers: function(event) {
     event.preventDefault();
     city = window.location.hash
-    
+
     Backbone.history.navigate(city.slice(0, city.length - 5) + "/users", {trigger: true})
   }
 })
