@@ -17,6 +17,7 @@ ModelFindrApp.Views.SearchImgs = Backbone.CompositeView.extend({
     this.addSubview('.imgs', this.imgIndex);
 
     this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, 'sync', this.noResults);
   },
 
   render: function() {
@@ -31,5 +32,13 @@ ModelFindrApp.Views.SearchImgs = Backbone.CompositeView.extend({
     city = window.location.hash
 
     Backbone.history.navigate(city.slice(0, city.length - 5) + "/users", {trigger: true})
+  },
+
+  noResults: function() {
+    if ($('.img-gallery').length === 0) {
+      var noResultsView = new ModelFindrApp.Views.NoResults;
+      debugger;
+      $('.search-imgs').append(noResultsView.render().$el)
+    }
   }
 })

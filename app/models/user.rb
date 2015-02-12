@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true}
   validates :skill_type, inclusion: { in: ["Photographer", "Model"] }
   validates :gender, inclusion: { in: ["Male", "Female"] }
+  validates :city, presence: { message: " is invalid" }
 
   has_many :user_views
 

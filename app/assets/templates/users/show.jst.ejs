@@ -1,11 +1,11 @@
 <div id="sidebar" style="float: left; width: 30%;">
-  <img id="avatar-img" src="<%= user.get('avatar_img') %>"/>
+  <img id="avatar-img" src="<%= user.escape('avatar_img') %>"/>
   <br>
   <h2  class="details">Details</h2>
   <ul class="user-details">
-    <li> <strong>Compensation:</strong> <%= user.get('compensation') %></li>
+    <li> <strong>Compensation:</strong> <%= user.escape('compensation') %></li>
     <br>
-    <li> <strong>Experience:</strong> <%= user.get('experience') %></li>
+    <li> <strong>Experience:</strong> <%= user.escape('experience') %></li>
   </ul>
 </div>
 
@@ -19,7 +19,7 @@
 
     <div id="exampleDropPane"></div>
 
-    <h6><%= user.get('username') %></h6>
+    <h6><%= user.escape('username') %></h6>
     <ul id="user-gen-info-list">
     </ul>
   </div>
@@ -27,7 +27,7 @@
   <div id="about-me">
     <h2>About Me</h2>
     <p>
-      <%= user.get('about_me') %>
+      <%= user.escape('about_me') %>
     </p>
   </div>
 

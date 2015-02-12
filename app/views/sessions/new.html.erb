@@ -1,4 +1,14 @@
 <form id="new-session-form" action="<%= session_url %>" method="post">
+  <div class="error-box">
+    <% if flash.now[:error] %>
+      <ul>
+        <% flash.now[:error].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
   <img src="https://www.filepicker.io/api/file/q49noi2xQdqHLKhRIxxo">
   <br>
   <h6>Sign In</h6>
@@ -40,9 +50,9 @@
     <span class="disclaimer-text">
       <strong>DISCLAIMER:</strong>
       Most of these photos have been taken from the internet, this is a project
-      from <span class="fancy-text">YS Productions</span> (Yusuf Soomro Productions).
-      I am <strong>NOT</strong> in any way an owner of these photos. The people included
-      in the images include: Mario Testino, Ben Stiller Bruce Weber, Adam Gallagher,
+      from <span class="fancy-text-name">YS Productions</span> (Yusuf Soomro Productions).
+      I am <strong>NOT</strong> in any way an owner of these photos. The people
+      in the images include: Mario Testino, Ben Stiller, Bruce Weber, Adam Gallagher,
       Mikki Koomar, Scarlet Johansson, Scott Eastwood, Juergen Teller, Terry Richardson,
       Godfrey Gao, Kylie Jenner, and Lupita Nyong'o.
 

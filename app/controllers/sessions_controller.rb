@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       @user = User.new(user_params)
-      flash.now[:error] = "Wrong combination of email/password"
+      flash.now[:error] = ["Wrong combination of email/password"]
       render 'sessions/new'
     end
   end

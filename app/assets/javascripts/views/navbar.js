@@ -76,6 +76,9 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
         data: {username: username },
         success: function() {
           Backbone.history.navigate("users/" + user.id, {trigger: true})
+        },
+        error: function() {
+          console.log("Wow, stop trying. No user exists with that username");
         }
       })
     }
@@ -86,7 +89,8 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
     $("<input type='text' id='searchTextField' placeholder=' i.e. San Francisco, CA'>").insertAfter("#city-or-users")
       var options = {
         types: ['(cities)'],
-        componentRestrictions: {country: "us"}
+        componentRestrictions: {country: "us"},
+        selectFirst: true
       };
 
       var input = this.$('#searchTextField')[0];

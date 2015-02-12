@@ -20,3 +20,10 @@
   color: #11b8cc;
   margin-bottom: 15px;
 }
+
+.error-box {
+  z-index: 50;
+  transition: all 3s;
+  width: 500px;
+  background-color: #66CCFF;
+}

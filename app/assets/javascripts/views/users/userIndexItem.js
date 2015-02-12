@@ -13,12 +13,6 @@ ModelFindrApp.Views.UserIndexItem = Backbone.View.extend({
   },
 
   createUserView: function(event) {
-    if (ModelFindrApp.isGuest) {
-      event.preventDefault();
-      alert("Sorry, you have to create an account with us to do that.");
-      return;
-    }
-
     var newUserView = new ModelFindrApp.Models.UserView;
 
     newUserView.save({user_id: this.model.id}, {

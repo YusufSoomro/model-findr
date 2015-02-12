@@ -11,7 +11,7 @@
 
 
 <a href="#users/<%= user.id %>/portfolio" target="_blank">View Portfolio</a><br>
-<a href="#users/<%= user.id %>" target="_blank"><%= user.get('username') %></a><br>
+<a href="#users/<%= user.id %>" target="_blank"><%= user.escape('username') %></a><br>
 
 <%= user.get('gender') %><br>
 <%= user.get('skill_type') %><br>
