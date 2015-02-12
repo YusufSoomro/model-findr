@@ -16,7 +16,9 @@ ModelFindrApp.Views.UserIndex = Backbone.CompositeView.extend({
     }, this);
     this.attachSubviews();
 
-    this.$('.user-list').masonry();
+    this.$('.user-list').imagesLoaded( function() {
+      this.$('.user-list').masonry();
+    }.bind(this));
 
     return this;
   }
