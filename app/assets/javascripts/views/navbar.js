@@ -151,6 +151,8 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
             displayKey: 'value',
             source: substringMatcher(states)
           })
+          // $('.tt-hint').css('left', '-10px');
+          // $('.twitter-typeahead').css('margin-left', '10px');
   },
 
 })

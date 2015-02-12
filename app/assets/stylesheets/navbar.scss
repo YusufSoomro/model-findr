@@ -68,10 +68,11 @@
 }
 
 #searchTextField, #searchTextField:hover, .tt-hint {
-  padding: 0;
+  padding: 0 0 0 10px;
   color: black;
   font-size: 20px;
   width: 250px;
+  left: 0;
 }
 
 #city-or-users {
@@ -91,7 +92,7 @@
 }
 
 #city-or-users {
-  border-radius: 5%;
+  border-radius: 2px;
   background-color: #eee;
   margin-right: 5px;
 }
@@ -101,9 +102,10 @@
 }
 
 input.tt-hint {
-    height: 30px;
-    padding: 0;
-    color: #C0C0C0;
+  height: 30px;
+  padding: 10px;
+  color: #C0C0C0;
+  // left: -10px;
 }
 
 .tt-dropdown-menu{
@@ -119,4 +121,8 @@ input.tt-hint {
 
 .tt-suggestion:hover, .tt-suggestion.tt-cursor {
   background: #C0C0C0;
+}
+
+.twitter-typeahead {
+  bottom: 1px;
 }
