@@ -11,7 +11,7 @@
 </script>
 
 <script>
-    ModelFindrApp.USERNAMES = JSON.parse('<%= User.pluck(:username).to_json.html_safe %>');
+  ModelFindrApp.USERNAMES = JSON.parse('<%= User.where("guest = false").pluck(:username).to_json.html_safe %>');
 </script>
 
 <div id="main">
