@@ -16,6 +16,8 @@ ModelFindrApp.Views.UserIndex = Backbone.CompositeView.extend({
     }, this);
     this.attachSubviews();
 
+    this.$('.user-list').masonry();
+
     return this;
   }
 });
