@@ -36,7 +36,7 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
   },
 
   uploadPhoto: function () {
-    if (ModelFindrApp.currentUserId === 12) {
+    if (ModelFindrApp.isGuest) {
       alert("Sorry, you can't do that unless you create an account with us!");
       return;
     }
@@ -73,16 +73,12 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
   navToPortfolio: function(event) {
     event.preventDefault();
 
-    if (ModelFindrApp.currentUserId === 12) {
-      alert("You're a guest, silly. Create an account with us to do that.");
-      return;
-    }
     Backbone.history.navigate('users/' + this.model.id + '/portfolio', {trigger: true})
   },
 
   navToEdit: function(event) {
     event.preventDefault();
-    if (ModelFindrApp.currentUserId === 12) {
+    if (ModelFindrApp.isGuest) {
       alert("Sorry, you can't do that unless you create an account with us!");
       return;
     }

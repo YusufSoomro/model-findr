@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   namespace :api do
-    resources :users, only: [:show, :update, :index]
+    resources :users, only: [:show, :update, :index, :destroy]
     resources :images, only: [:create, :show, :index]
     resources :image_likes, only: [:create]
     resources :user_views, only: [:create]

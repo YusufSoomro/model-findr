@@ -3,7 +3,7 @@
 <div class="portfolio-header">
   <h6><%= headerString %></h6>
   <button class="profile-btn">Profile</button>
-  <% if (ModelFindrApp.currentUserId !== 12 && ModelFindrApp.currentUserId === parseInt(user.id)) { %>
+  <% if (ModelFindrApp.isGuest !== true && ModelFindrApp.currentUserId === parseInt(user.id)) { %>
     <button class="upload-btn">Upload Photo</button>
   <% } %>
 </div>

@@ -34,10 +34,6 @@ ModelFindrApp.Views.ImageIndexItem = Backbone.View.extend({
 
   makeImgLike: function(event) {
     event.preventDefault();
-    if (ModelFindrApp.currentUserId === 12) {
-      alert("Sorry, you have to create an account with us to do that.");
-      return;
-    }
 
     var that = this;
     this.$('.glyphicon-heart').css("color", "red");

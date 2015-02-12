@@ -12,7 +12,7 @@
 <div id="content" style="float: left; width: 60%;">
   <div class="user-general-info">
 
-    <% if (ModelFindrApp.currentUserId === parseInt(user.id)) { %>
+    <% if (ModelFindrApp.isGuest !== true && ModelFindrApp.currentUserId === parseInt(user.id)) { %>
       <button id="photo-btn">Upload</button>
       <button id="edit-btn">Edit</button>
     <% } %>

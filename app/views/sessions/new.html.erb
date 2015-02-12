@@ -27,7 +27,24 @@
   <script charset="utf-8">
     $('.guest').on("click", function(event) {
       event.preventDefault();
-      $('.user-email').val("guest19");
+
+      <% new_guest_num = rand(0..20000) %>
+
+      <% while User.exists?(username: "guest_#{new_guest_num}") do %>
+        <% new_guest_num = rand(0..20000) %>
+      <% end %>
+
+      <% User.create( %>
+        <% email: "guest#{new_guest_num}", %>
+        <% username: "guest#{new_guest_num}", %>
+        <% password: "password", %>
+        <% skill_type: "Photographer", %>
+        <% gender: "Male", %>
+        <% city: "San Francisco, CA, United States", %>
+        <% guest: true %>
+      <% ) %>
+
+      $('.user-email').val("guest<%= new_guest_num %>");
       $('.user-password').val("password");
       $('input[type=submit]').click();
     })

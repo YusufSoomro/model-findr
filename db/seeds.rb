@@ -310,16 +310,3 @@ User.all.each do |user|
     end
   end
 end
-
-# Guest User
-User.create!(
-  email: "guest19",
-  username: "guest_user",
-  password: "password",
-  skill_type: "Model",
-  gender: "Male",
-  city: "San Francisco, CA, United States",
-  experience: "None",
-  compensation: "None",
-  avatar_img: "http://prancingthroughlife.com/wp-content/uploads/2014/03/na.jpg"
-)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206175028) do
+ActiveRecord::Schema.define(version: 20150212001555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,19 +48,20 @@ ActiveRecord::Schema.define(version: 20150206175028) do
   add_index "user_views", ["user_id"], name: "index_user_views_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",           null: false
-    t.string   "username",        null: false
-    t.string   "password_digest", null: false
-    t.string   "session_token",   null: false
-    t.string   "skill_type",      null: false
-    t.string   "gender",          null: false
-    t.string   "city",            null: false
+    t.string   "email",                                                                                        null: false
+    t.string   "username",                                                                                     null: false
+    t.string   "password_digest",                                                                              null: false
+    t.string   "session_token",                                                                                null: false
+    t.string   "skill_type",                                                                                   null: false
+    t.string   "gender",                                                                                       null: false
+    t.string   "city",                                                                                         null: false
     t.text     "about_me"
     t.string   "experience"
     t.string   "compensation"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "avatar_img"
+    t.datetime "created_at",                                                                                   null: false
+    t.datetime "updated_at",                                                                                   null: false
+    t.string   "avatar_img",      default: "http://prancingthroughlife.com/wp-content/uploads/2014/03/na.jpg"
+    t.boolean  "guest",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

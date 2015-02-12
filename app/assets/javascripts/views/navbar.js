@@ -33,6 +33,16 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
         window.location = "/session/new";
       }
     });
+
+    if (ModelFindrApp.isGuest) {
+      var user = new ModelFindrApp.Models.User({id: ModelFindrApp.currentUserId});
+
+      user.destroy({
+        success: function() {
+          console.log("POW! Guest user deleted.");
+        }
+      })
+    }
   },
 
   profilePage: function() {
