@@ -47,6 +47,31 @@
   <%= button_to "About", about_url, class: "about", method: :get %>
 </form>
 
+<div class="about-section">
+  <h5>What is model findr about?</h5>
+  <p>
+    <span class="description-text">
+      <span class="fancy-text">model findr</span> is about connecting the people who love the camera to the
+      people who love taking pictures. Here at <span class="fancy-text">model findr</span> we want it
+      so that you will have to look no farther than your own computer to discover
+      aesthetically talented people. Whether it be photographer or model, both are here.
+    </span>
+  </p><br><br><hr>
+
+  <p>
+    <span class="disclaimer-text">
+      <strong>DISCLAIMER:</strong>
+      Most of these photos have been taken from the internet, this is a project
+      from <span class="fancy-text-name">YS Productions</span> (Yusuf Soomro Productions).
+      I am <strong>NOT</strong> in any way an owner of these photos. The people included
+      in the images include: Mario Testino, Ben Stiller Bruce Weber, Adam Gallagher,
+      Mikki Koomar, Scarlet Johansson, Scott Eastwood, Juergen Teller, Terry Richardson,
+      Godfrey Gao, Kylie Jenner, and Lupita Nyong'o.
+
+    </span>
+  </p>
+</div>
+
 
 <script charset="utf-8">
   function initialize() {
@@ -60,4 +85,9 @@
   }
 
   initialize()
+
+  $('.about').on('click', function(event) {
+    event.preventDefault();
+    $('.about-section').css("display", "inline")
+  })
 </script>

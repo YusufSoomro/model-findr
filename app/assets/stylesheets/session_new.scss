@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #new-session-form {
-  overflow: hidden;
+  overflow: auto;
   width: 500px;
   height: 100vh;
   margin-left: 50px;
@@ -46,4 +46,31 @@
   color: #CC6600;
   background: #FFF;
   box-shadow: 0em 1em 2em black;
+}
+
+.about-section {
+  display: none;
+  border-radius: 25px;
+  padding: 10px;
+  text-align: center;
+  width: 40%;
+  top: 10%;
+  position: absolute;
+  right: 375px;
+  background-color: #eee;
+
+  .fancy-text {
+    font-family: "Pacifico";
+    font-size: 30px;
+  }
+
+  .fancy-text-name {
+    font-family: "Pacifico";
+    font-size: 20px;
+  }
+
+  .description-text {
+    font-size: 25px;
+    border-bottom: 1px solid;
+  }
 }

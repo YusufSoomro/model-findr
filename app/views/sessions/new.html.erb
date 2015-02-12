@@ -22,31 +22,61 @@
   <br><br>
   <button class="guest">Guest</button>
   <br><br>
-  <%= button_to "About", about_url, method: :get, class: "about" %>
-
-  <script charset="utf-8">
-    $('.guest').on("click", function(event) {
-      event.preventDefault();
-
-      <% new_guest_num = rand(0..20000) %>
-
-      <% while User.exists?(username: "guest_#{new_guest_num}") do %>
-        <% new_guest_num = rand(0..20000) %>
-      <% end %>
-
-      <% User.create( %>
-        <% email: "guest#{new_guest_num}", %>
-        <% username: "guest#{new_guest_num}", %>
-        <% password: "password", %>
-        <% skill_type: "Photographer", %>
-        <% gender: "Male", %>
-        <% city: "San Francisco, CA, United States", %>
-        <% guest: true %>
-      <% ) %>
-
-      $('.user-email').val("guest<%= new_guest_num %>");
-      $('.user-password').val("password");
-      $('input[type=submit]').click();
-    })
-  </script>
+  <button class="about">about</button>
 </form>
+
+<div class="about-section">
+  <h5>What is model findr about?</h5>
+  <p>
+    <span class="description-text">
+      <span class="fancy-text">model findr</span> is about connecting the people who love the camera to the
+      people who love taking pictures. Here at <span class="fancy-text">model findr</span> we want it
+      so that you will have to look no farther than your own computer to discover
+      aesthetically talented people. Whether it be photographer or model, both are here.
+    </span>
+  </p><br><br><hr>
+
+  <p>
+    <span class="disclaimer-text">
+      <strong>DISCLAIMER:</strong>
+      Most of these photos have been taken from the internet, this is a project
+      from <span class="fancy-text">YS Productions</span> (Yusuf Soomro Productions).
+      I am <strong>NOT</strong> in any way an owner of these photos. The people included
+      in the images include: Mario Testino, Ben Stiller Bruce Weber, Adam Gallagher,
+      Mikki Koomar, Scarlet Johansson, Scott Eastwood, Juergen Teller, Terry Richardson,
+      Godfrey Gao, Kylie Jenner, and Lupita Nyong'o.
+
+    </span>
+  </p>
+</div>
+
+<script charset="utf-8">
+  $('.guest').on("click", function(event) {
+    event.preventDefault();
+
+    <% new_guest_num = rand(0..20000) %>
+
+    <% while User.exists?(username: "guest_#{new_guest_num}") do %>
+      <% new_guest_num = rand(0..20000) %>
+    <% end %>
+
+    <% User.create( %>
+      <% email: "guest#{new_guest_num}", %>
+      <% username: "guest#{new_guest_num}", %>
+      <% password: "password", %>
+      <% skill_type: "Photographer", %>
+      <% gender: "Male", %>
+      <% city: "San Francisco, CA, United States", %>
+      <% guest: true %>
+    <% ) %>
+
+    $('.user-email').val("guest<%= new_guest_num %>");
+    $('.user-password').val("password");
+    $('input[type=submit]').click();
+  })
+
+  $('.about').on('click', function(event) {
+    event.preventDefault();
+    $('.about-section').css("display", "inline")
+  })
+</script>
