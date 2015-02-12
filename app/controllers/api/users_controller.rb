@@ -3,19 +3,20 @@ class Api::UsersController < ApplicationController
   def index
     if params[:your_city]
       @users = User.joins('LEFT OUTER JOIN user_views ON users.id = user_views.user_id')
-       .where("city = ?", current_user.city)
-       .order("COUNT(user_views.id)")
+       .where("city = ? AND guest = false", current_user.city)
+       .order("COUNT(user_views.id) desc")
        .group("users.id")
        .limit(20)
     elsif params[:city]
       @users = User.joins('LEFT OUTER JOIN user_views ON users.id = user_views.user_id')
-       .where("city = ?", params[:city])
-       .order("COUNT(user_views.id)")
+       .where("city = ? AND guest = false", params[:city])
+       .order("COUNT(user_views.id) desc")
        .group("users.id")
        .limit(20)
     else
       @users = User.joins(:user_views)
-        .order("COUNT(user_views.id)")
+        .where("guest = false")
+        .order("COUNT(user_views.id) desc")
         .group("users.id")
         .limit(20)
     end

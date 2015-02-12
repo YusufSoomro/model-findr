@@ -17,18 +17,18 @@ class Api::ImagesController < ApplicationController
     if params[:your_city]
       @images = Image.joins('LEFT OUTER JOIN image_likes ON images.id = image_likes.image_id')
        .where("user_city = ?", current_user.city)
-       .order("COUNT(image_likes.id)")
+       .order("COUNT(image_likes.id) desc")
        .group("images.id")
        .limit(20)
     elsif params[:city]
       @images = Image.joins('LEFT OUTER JOIN image_likes ON images.id = image_likes.image_id')
        .where("user_city = ?", params[:city])
-       .order("COUNT(image_likes.id)")
+       .order("COUNT(image_likes.id) desc")
        .group("images.id")
        .limit(20)
     else
       @images = Image.joins(:image_likes)
-        .order('COUNT(image_likes.id)')
+        .order('COUNT(image_likes.id) desc')
         .group('images.id')
         .limit(20)
     end
