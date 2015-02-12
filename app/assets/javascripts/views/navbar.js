@@ -83,7 +83,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
 
   initGMapsAutoComplete: function(){
     this.$('.twitter-typeahead').remove();
-    $("<input type='text' id='searchTextField' placeholder=' i.e. San Francisco, CA, United States'>").insertAfter("#city-or-users")
+    $("<input type='text' id='searchTextField' placeholder=' i.e. San Francisco, CA'>").insertAfter("#city-or-users")
       var options = {
         types: ['(cities)'],
         componentRestrictions: {country: "us"}
