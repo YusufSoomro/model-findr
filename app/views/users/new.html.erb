@@ -1,84 +1,89 @@
-<form id="new-user-form" action="<%= users_url %>" method="post">
-  <div class="error-box">
-    <% if flash.now[:error] %>
-      <ul>
-        <% flash.now[:error].each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    <% end %>
+<div class="form-container">
+  <form id="new-user-form" action="<%= users_url %>" method="post">
+    <div class="error-box">
+      <% if flash.now[:error] %>
+        <ul>
+          <% flash.now[:error].each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <img src="https://www.filepicker.io/api/file/q49noi2xQdqHLKhRIxxo">
+
+    <h6>New Account</h6>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label>
+      Email<br>
+      <input type="text" name="user[email]" value="<%= @user.email %>">
+    </label><br>
+
+    <label>
+      Username<br>
+      <input type="text" name="user[username]" value="<%= @user.username %>">
+    </label><br>
+
+    <label>
+      Password<br>
+      <input type="password" name="user[password]">
+    </label><br>
+
+    <label>
+      Skill Type<br>
+      <select name="user[skill_type]">
+        <option value="Photographer">Photographer</option>
+        <option value="Model">Model</option>
+      </select>
+    </label>
+
+    <label>
+      Gender<br>
+      <select name="user[gender]">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </label><br><br>
+
+    <label>
+      City<br>
+      <input type="text" name="user[city]" id="searchTextField">
+    </label><br><br>
+
+    <input class="submit" type="submit" value="Sign Up">
+    <br>
+    <a class="switch-link" href="/session/new">Log In</a>
+    <br><br>
+    <%= button_to "About", about_url, class: "about", method: :get %>
+  </form>
+</div>
+
+<div class="about-container">
+  <div class="about-section">
+    <h5>What is model findr about?</h5>
+    <p>
+      <span class="description-text">
+        <span class="fancy-text">model findr</span> is about connecting the people who love the camera to the
+        people who love taking pictures. Here at <span class="fancy-text">model findr</span> we want it
+        so that you will have to look no farther than your own computer to discover
+        aesthetically talented people. Whether it be photographer or model, both are here.
+      </span>
+    </p><br><br><hr>
+
+    <p>
+      <span class="disclaimer-text">
+        <strong>DISCLAIMER:</strong>
+        Most of these photos have been taken from the internet, this is a project
+        from <span class="fancy-text-name">YS Productions</span> (Yusuf Soomro Productions).
+        I am <strong>NOT</strong> in any way an owner of these photos. The people
+        in the images include: Mario Testino, Jennifer Lawrence, Ben Stiller,
+        Bruce Weber, Adam Gallagher, Mikki Koomar, Scarlet Johansson,
+        Scott Eastwood, Juergen Teller, Terry Richardson, Godfrey Gao,
+        Kylie Jenner, and Lupita Nyong'o.
+      </span>
+    </p>
   </div>
-
-  <img src="https://www.filepicker.io/api/file/q49noi2xQdqHLKhRIxxo">
-
-  <h6>New Account</h6>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-  <label>
-    Email<br>
-    <input type="text" name="user[email]" value="<%= @user.email %>">
-  </label><br>
-
-  <label>
-    Username<br>
-    <input type="text" name="user[username]" value="<%= @user.username %>">
-  </label><br>
-
-  <label>
-    Password<br>
-    <input type="password" name="user[password]">
-  </label><br>
-
-  <label>
-    Skill Type<br>
-    <select name="user[skill_type]">
-      <option value="Photographer">Photographer</option>
-      <option value="Model">Model</option>
-    </select>
-  </label>
-
-  <label>
-    Gender<br>
-    <select name="user[gender]">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
-  </label><br><br>
-
-  <label>
-    City<br>
-    <input type="text" name="user[city]" id="searchTextField">
-  </label><br><br>
-
-  <input class="submit" type="submit" value="Sign Up">
-  <br>
-  <a class="switch-link" href="/session/new">Log In</a>
-  <br><br>
-  <%= button_to "About", about_url, class: "about", method: :get %>
-</form>
-
-<div class="about-section">
-  <h5>What is model findr about?</h5>
-  <p>
-    <span class="description-text">
-      <span class="fancy-text">model findr</span> is about connecting the people who love the camera to the
-      people who love taking pictures. Here at <span class="fancy-text">model findr</span> we want it
-      so that you will have to look no farther than your own computer to discover
-      aesthetically talented people. Whether it be photographer or model, both are here.
-    </span>
-  </p><br><br><hr>
-
-  <p>
-    <span class="disclaimer-text">
-      <strong>DISCLAIMER:</strong>
-      Most of these photos have been taken from the internet, this is a project
-      from <span class="fancy-text-name">YS Productions</span> (Yusuf Soomro Productions).
-      I am <strong>NOT</strong> in any way an owner of these photos. The people
-      in the images include: Mario Testino, Ben Stiller, Bruce Weber, Adam Gallagher,
-      Mikki Koomar, Scarlet Johansson, Scott Eastwood, Juergen Teller, Terry Richardson,
-      Godfrey Gao, Kylie Jenner, and Lupita Nyong'o.
-    </span>
-  </p>
 </div>
 
 
@@ -97,6 +102,6 @@
 
   $('.about').on('click', function(event) {
     event.preventDefault();
-    $('.about-section').css("display", "inline")
+    $('.about-section').css("display", "block")
   })
 </script>

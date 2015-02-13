@@ -1,63 +1,67 @@
-<form id="new-session-form" action="<%= session_url %>" method="post">
-  <div class="error-box">
-    <% if flash.now[:error] %>
-      <ul>
-        <% flash.now[:error].each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    <% end %>
+<div class="form-container">
+  <form id="new-session-form" action="<%= session_url %>" method="post">
+    <div class="error-box">
+      <% if flash.now[:error] %>
+        <ul>
+          <% flash.now[:error].each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <img src="https://www.filepicker.io/api/file/q49noi2xQdqHLKhRIxxo">
+    <br>
+    <h6>Sign In</h6>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label>
+      Email
+      <br>
+      <input class="user-email" type="text" name="user[email]" value="<%= @user.email %>">
+    </label><br>
+
+    <label>
+      Password
+      <br>
+      <input class="user-password" type="password" name="user[password]">
+    </label><br><br>
+
+    <input class="submit" type="submit" value="Log In">
+    <br>
+    <a class="switch-link" href="/users/new">Sign Up</a>
+    <br><br>
+    <button class="guest">Guest</button>
+    <br><br>
+    <button class="about">about</button>
+  </form>
+</div>
+
+<div class="about-container">
+  <div class="about-section">
+    <h5>What is model findr about?</h5>
+    <p>
+      <span class="description-text">
+        <span class="fancy-text">model findr</span> is about connecting the people who love the camera to the
+        people who love taking pictures. Here at <span class="fancy-text">model findr</span> we want it
+        so that you will have to look no farther than your own computer to discover
+        aesthetically talented people. Whether it be photographer or model, both are here.
+      </span>
+    </p><br><br><hr>
+
+    <p>
+      <span class="disclaimer-text">
+        <strong>DISCLAIMER:</strong>
+        Most of these photos have been taken from the internet, this is a project
+        from <span class="fancy-text-name">YS Productions</span> (Yusuf Soomro Productions).
+        I am <strong>NOT</strong> in any way an owner of these photos. The people
+        in the images include: Mario Testino, Jennifer Lawrence, Ben Stiller,
+        Bruce Weber, Adam Gallagher, Mikki Koomar, Scarlet Johansson,
+        Scott Eastwood, Juergen Teller, Terry Richardson, Godfrey Gao,
+        Kylie Jenner, and Lupita Nyong'o.
+      </span>
+    </p>
   </div>
-
-  <img src="https://www.filepicker.io/api/file/q49noi2xQdqHLKhRIxxo">
-  <br>
-  <h6>Sign In</h6>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-  <label>
-    Email
-    <br>
-    <input class="user-email" type="text" name="user[email]" value="<%= @user.email %>">
-  </label><br>
-
-  <label>
-    Password
-    <br>
-    <input class="user-password" type="password" name="user[password]">
-  </label><br><br>
-
-  <input class="submit" type="submit" value="Log In">
-  <br>
-  <a class="switch-link" href="/users/new">Sign Up</a>
-  <br><br>
-  <button class="guest">Guest</button>
-  <br><br>
-  <button class="about">about</button>
-</form>
-
-<div class="about-section">
-  <h5>What is model findr about?</h5>
-  <p>
-    <span class="description-text">
-      <span class="fancy-text">model findr</span> is about connecting the people who love the camera to the
-      people who love taking pictures. Here at <span class="fancy-text">model findr</span> we want it
-      so that you will have to look no farther than your own computer to discover
-      aesthetically talented people. Whether it be photographer or model, both are here.
-    </span>
-  </p><br><br><hr>
-
-  <p>
-    <span class="disclaimer-text">
-      <strong>DISCLAIMER:</strong>
-      Most of these photos have been taken from the internet, this is a project
-      from <span class="fancy-text-name">YS Productions</span> (Yusuf Soomro Productions).
-      I am <strong>NOT</strong> in any way an owner of these photos. The people
-      in the images include: Mario Testino, Ben Stiller, Bruce Weber, Adam Gallagher,
-      Mikki Koomar, Scarlet Johansson, Scott Eastwood, Juergen Teller, Terry Richardson,
-      Godfrey Gao, Kylie Jenner, and Lupita Nyong'o.
-
-    </span>
-  </p>
 </div>
 
 <script charset="utf-8">
@@ -87,6 +91,6 @@
 
   $('.about').on('click', function(event) {
     event.preventDefault();
-    $('.about-section').css("display", "inline")
+    $('.about-section').css("display", "block")
   })
 </script>
