@@ -27,11 +27,14 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
   addImage: function (image) {
     var imgLI = new ModelFindrApp.Views.ImageIndexItem({model: image, collection: this.collection});
     this.addSubview('.img-list', imgLI);
+    this.render();
   },
 
   render: function() {
     var content = this.template();
     this.$el.html(content);
+    this.subviews()['.img-list'] = this.sortSubviews();
+    debugger
     this.attachSubviews();
     var view = this;
 
@@ -51,5 +54,11 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
     }, 0)
 
     return this;
+  },
+
+  sortSubviews: function () {
+    return _.sortBy(this.subviews('.img-list'), function (subview) {
+      return -subview.model.id;
+    });
   }
 })

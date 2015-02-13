@@ -13,7 +13,7 @@ json.extract! @user,
 
 json.images do
   json.array! @user.images do |image|
-    json.extract! image, :id, :user_id, :img_url, :caption, :user_city
+    json.extract! image, :id, :user_id, :img_url, :caption, :user_city, :created_at
     json.liked image.liked_by_user?(current_user)
     json.author_username @user.username
     json.num_likes image.image_likes.length
