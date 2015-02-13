@@ -27,10 +27,17 @@ ModelFindrApp.Views.UserShow = Backbone.View.extend({
     }, this);
 
     _.each(this.model.imageCollection().slice(0, 4), function(image) {
-      var imageLI = $('<li>');
+      var imageLI = $('<div>');
       imageLI.html("<img src=" + image.get('img_url') + ">");
       this.$('#user-portfolio').append(imageLI);
     }, this);
+
+    this.$('#user-portfolio').justifiedGallery({
+      lastRow: 'nojustify',
+      rowHeight: 200,
+      margins: 5,
+      waitThumbnailsLoad: false
+    });
 
     return this;
   },
