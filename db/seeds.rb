@@ -18,7 +18,7 @@ def image_like_maker(image_id, user_id)
 end
 
 # EXPLORE BASED USERS
-mario = User.create!(
+mario = User.new(
   email: "mariotestino19@gmail.com",
   username: "Testino",
   password: "password19",
@@ -33,7 +33,9 @@ mario = User.create!(
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/vsen4QYfTZy434bWWNbN"
 )
-bruce = User.create!(
+mario.save!
+
+bruce = User.new(
   email: "bruceweber19@gmail.com",
   username: "Webs",
   password: "password19",
@@ -48,7 +50,9 @@ bruce = User.create!(
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/UYFIIQuePCu2omhuqwTj"
 )
-adam = User.create!(
+bruce.save!
+
+adam = User.new(
   email: "adamgallagher19@gmail.com",
   username: "iamgalla",
   password: "password19",
@@ -63,7 +67,9 @@ adam = User.create!(
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/n6rjMIoSsCPm5u4fS3jm"
 )
-mikki = User.create!(
+adam.save!
+
+mikki = User.new(
   email: "mikkikoomar19@gmail.com",
   username: "Mikki",
   password: "password19",
@@ -82,7 +88,9 @@ mikki = User.create!(
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/dC5uzihqRZCIUgDdZnnx"
 )
-scarjo = User.create!(
+mikki.save!
+
+scarjo = User.new(
   email: "scarlettjohansen19@gmail.com",
   username: "ScarJo",
   password: "password19",
@@ -98,7 +106,9 @@ scarjo = User.create!(
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/CIckhJPiTbaLLAYFcazJ"
 )
-scott = User.create!(
+scarjo.save!
+
+scott = User.new(
   email: "scotteastwood19@gmail.com",
   username: "NotClintEastwood",
   password: "password19",
@@ -111,10 +121,10 @@ scott = User.create!(
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/ZSDVHQRZTd26SoX8uyiy"
 )
-
+scott.save!
 
 # YOUR CITY BASED USERS, FOR THE GUEST.
-juergen = User.create!(
+juergen = User.new(
   email: "juergenteller19@gmail.com",
   username: "TheTeller",
   password: "password19",
@@ -127,7 +137,9 @@ juergen = User.create!(
   compensation: "Depends on Assignment",
   avatar_img: "https://www.filepicker.io/api/file/DTFUhYhFSpGUVvfznt0S"
 )
-terry = User.create!(
+juergen.save!
+
+terry = User.new(
   email: "terryrichardson19@gmail.com",
   username: "NotGoodkind",
   password: "password19",
@@ -143,7 +155,9 @@ terry = User.create!(
   compensation: "Depends on Assignment",
   avatar_img: "https://www.filepicker.io/api/file/SpH5pllhQduVKXTNFMYg"
 )
-godfrey = User.create!(
+terry.save!
+
+godfrey = User.new(
   email: "godfreygao19@gmail.com",
   username: "Gao",
   password: "password19",
@@ -155,7 +169,9 @@ godfrey = User.create!(
   compensation: "None",
   avatar_img: "https://www.filepicker.io/api/file/PgCBWCvsT12D2YuTvoDI"
 )
-kylie = User.create!(
+godfrey.save!
+
+kylie = User.new(
   email: "kyliejenner19@gmail.com",
   username: "ImSoKylie",
   password: "password19",
@@ -167,7 +183,9 @@ kylie = User.create!(
   compensation: "Required",
   avatar_img: "https://www.filepicker.io/api/file/dqYe85ySRtuiul2TOoAO"
 )
-lupita = User.create!(
+kylie.save!
+
+lupita = User.new(
   email: "lupitanyongo19@gmail.com",
   username: "YoureNyong",
   password: "password19",
@@ -179,128 +197,129 @@ lupita = User.create!(
   compensation: "Depends on Assignment",
   avatar_img: "https://www.filepicker.io/api/file/99WXkzDTZe9UhVghpqyQ"
 )
+lupita.save!
 
 
 #MARIO TESTINO'S IMAGES
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/5BglRgiTfuMJrrcCdPza", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/0yEVHEo1TyuBEtNUCror", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/DC6GOvVMT326PMziitNV", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/UVMyexW1RWCPFjULTeHI", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/DR1S9jX1R9CQldJVOjzN", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/6LtuTA1bQO2RQQkAD7qx", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/MQ6QQS7SeWX10pwiVbvt", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/iV1yr9HRpGRRtC8kGkFD", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/da2VxMgARSq4ovcYE1Mb", user_city: "San Leandro, CA, United States")
-Image.create!(user_id: mario, img_url: "https://www.filepicker.io/api/file/oLJWqGuYQVKBnuGb4pk4", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/5BglRgiTfuMJrrcCdPza", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/0yEVHEo1TyuBEtNUCror", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/DC6GOvVMT326PMziitNV", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/UVMyexW1RWCPFjULTeHI", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/DR1S9jX1R9CQldJVOjzN", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/6LtuTA1bQO2RQQkAD7qx", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/MQ6QQS7SeWX10pwiVbvt", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/iV1yr9HRpGRRtC8kGkFD", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/da2VxMgARSq4ovcYE1Mb", user_city: "San Leandro, CA, United States")
+Image.create!(user: mario, img_url: "https://www.filepicker.io/api/file/oLJWqGuYQVKBnuGb4pk4", user_city: "San Leandro, CA, United States")
 
 #BRUCE WEBER'S IMAGES
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/kj4T15J7ReeVR16J4QnK", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/3JIk2VTOQa2LJYAJaCPt", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/6MbBzE0wQJqrOHNMnYCW", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/tcB7SK6VSgiEB4tW8ZpH", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/UYFIIQuePCu2omhuqwTj", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/AJyCei1S9uk9x4cR3VPc", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/ykPyszLuRFusFxOI6Xs8", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/1LwvnPT4CuC5AH6mFUlA", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/gXZEUqGQDKXXuHs3rvwm", user_city: "Santa Barbara, CA, United States")
-Image.create!(user_id: bruce, img_url: "https://www.filepicker.io/api/file/QhDE7VFNTOK3uGc0Ruzc", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/kj4T15J7ReeVR16J4QnK", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/3JIk2VTOQa2LJYAJaCPt", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/6MbBzE0wQJqrOHNMnYCW", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/tcB7SK6VSgiEB4tW8ZpH", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/UYFIIQuePCu2omhuqwTj", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/AJyCei1S9uk9x4cR3VPc", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/ykPyszLuRFusFxOI6Xs8", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/1LwvnPT4CuC5AH6mFUlA", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/gXZEUqGQDKXXuHs3rvwm", user_city: "Santa Barbara, CA, United States")
+Image.create!(user: bruce, img_url: "https://www.filepicker.io/api/file/QhDE7VFNTOK3uGc0Ruzc", user_city: "Santa Barbara, CA, United States")
 
 #ADAM GALLAGHER'S IMAGES
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/brQ0Wa7SYitsUKrI5XjA", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/9tRm2WY1TAapCmodhdd9", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/sdkKyG69ToikBWy7KyWl", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/QrsuIWSjS8KtpWTUpNcd", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/bvekoxhLQmbsoyLbpYD9", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/GikJwGOQjGnehJ80yqli", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/EEQUUrjQS2eRKUx7lrv3", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/idhcPF3QlKx2oLupxuN8", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/n6rjMIoSsCPm5u4fS3jm", user_city: "Los Angeles, CA, United States")
-Image.create!(user_id: adam, img_url: "https://www.filepicker.io/api/file/ZmjNyRYJSlWdYjQahkDK", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/brQ0Wa7SYitsUKrI5XjA", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/9tRm2WY1TAapCmodhdd9", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/sdkKyG69ToikBWy7KyWl", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/QrsuIWSjS8KtpWTUpNcd", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/bvekoxhLQmbsoyLbpYD9", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/GikJwGOQjGnehJ80yqli", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/EEQUUrjQS2eRKUx7lrv3", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/idhcPF3QlKx2oLupxuN8", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/n6rjMIoSsCPm5u4fS3jm", user_city: "Los Angeles, CA, United States")
+Image.create!(user: adam, img_url: "https://www.filepicker.io/api/file/ZmjNyRYJSlWdYjQahkDK", user_city: "Los Angeles, CA, United States")
 
 #MIKKI KOOMAR'S IMAGES
-Image.create!(user_id: mikki, img_url: "https://www.filepicker.io/api/file/CbMqBpTr656CQuKquHug", user_city: "Davis, CA, United States")
-Image.create!(user_id: mikki, img_url: "https://www.filepicker.io/api/file/66y3H97WQ4iYurgM5SiX", user_city: "Davis, CA, United States")
-Image.create!(user_id: mikki, img_url: "https://www.filepicker.io/api/file/nLq6wwUCQJWM69xDcrjv", user_city: "Davis, CA, United States")
-Image.create!(user_id: mikki, img_url: "https://www.filepicker.io/api/file/cne5dD5QCetY27um0eYY", user_city: "Davis, CA, United States")
-Image.create!(user_id: mikki, img_url: "https://www.filepicker.io/api/file/dC5uzihqRZCIUgDdZnnx", user_city: "Davis, CA, United States")
+Image.create!(user: mikki, img_url: "https://www.filepicker.io/api/file/CbMqBpTr656CQuKquHug", user_city: "Davis, CA, United States")
+Image.create!(user: mikki, img_url: "https://www.filepicker.io/api/file/66y3H97WQ4iYurgM5SiX", user_city: "Davis, CA, United States")
+Image.create!(user: mikki, img_url: "https://www.filepicker.io/api/file/nLq6wwUCQJWM69xDcrjv", user_city: "Davis, CA, United States")
+Image.create!(user: mikki, img_url: "https://www.filepicker.io/api/file/cne5dD5QCetY27um0eYY", user_city: "Davis, CA, United States")
+Image.create!(user: mikki, img_url: "https://www.filepicker.io/api/file/dC5uzihqRZCIUgDdZnnx", user_city: "Davis, CA, United States")
 
 #SCARLET JOHANSEN'S IMAGES
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/nnUEWNHHT7GTiHfcTK80", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/FAyoxyEESTGr2zhLtMXD", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/pXHyxBA4R3qFyuaR9biU", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/poqXO9ZJQaKCYqKqOW9F", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/CIckhJPiTbaLLAYFcazJ", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/jygAuMqQgGzmwyfyStjU", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/uLGmuXlrSgi7iH2WKEBW", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/OxjmiqUS9aZIZdlzaCwJ", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/ymr52ZLASimVIcArZPWd", user_city: "Dublin, CA, United States")
-Image.create!(user_id: scarjo, img_url: "https://www.filepicker.io/api/file/bsqd55zNS0emq6ccD51y", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/nnUEWNHHT7GTiHfcTK80", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/FAyoxyEESTGr2zhLtMXD", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/pXHyxBA4R3qFyuaR9biU", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/poqXO9ZJQaKCYqKqOW9F", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/CIckhJPiTbaLLAYFcazJ", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/jygAuMqQgGzmwyfyStjU", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/uLGmuXlrSgi7iH2WKEBW", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/OxjmiqUS9aZIZdlzaCwJ", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/ymr52ZLASimVIcArZPWd", user_city: "Dublin, CA, United States")
+Image.create!(user: scarjo, img_url: "https://www.filepicker.io/api/file/bsqd55zNS0emq6ccD51y", user_city: "Dublin, CA, United States")
 
 #SCOTT EASTWOOD'S IMAGES
-Image.create!(user_id: scott, img_url: "https://www.filepicker.io/api/file/ZSDVHQRZTd26SoX8uyiy", user_city: "Santa Cruz, CA, United States")
-Image.create!(user_id: scott, img_url: "https://www.filepicker.io/api/file/yaHNhgTISAmORPDBYEGE", user_city: "Santa Cruz, CA, United States")
-Image.create!(user_id: scott, img_url: "https://www.filepicker.io/api/file/KVSp2s2qT0igLAs5FnPY", user_city: "Santa Cruz, CA, United States")
-Image.create!(user_id: scott, img_url: "https://www.filepicker.io/api/file/EeXmNa0VQ96IQ3gva6gn", user_city: "Santa Cruz, CA, United States")
-Image.create!(user_id: scott, img_url: "https://www.filepicker.io/api/file/qRPvUrk5TgeiogmnR1g6", user_city: "Santa Cruz, CA, United States")
+Image.create!(user: scott, img_url: "https://www.filepicker.io/api/file/ZSDVHQRZTd26SoX8uyiy", user_city: "Santa Cruz, CA, United States")
+Image.create!(user: scott, img_url: "https://www.filepicker.io/api/file/yaHNhgTISAmORPDBYEGE", user_city: "Santa Cruz, CA, United States")
+Image.create!(user: scott, img_url: "https://www.filepicker.io/api/file/KVSp2s2qT0igLAs5FnPY", user_city: "Santa Cruz, CA, United States")
+Image.create!(user: scott, img_url: "https://www.filepicker.io/api/file/EeXmNa0VQ96IQ3gva6gn", user_city: "Santa Cruz, CA, United States")
+Image.create!(user: scott, img_url: "https://www.filepicker.io/api/file/qRPvUrk5TgeiogmnR1g6", user_city: "Santa Cruz, CA, United States")
 
 #JUERGEN TELLER'S IMAGES
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/uwUfrdQ1fIvMaUc0jpg6", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/9ZuhF1BpSbSBAS1V9Ws5", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/USMqzYpNRoS6j2ZHThM2", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/hBrqbKJ5Q6GpT6phbmwL", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/K3UYG36bTfqmWH1qI3nH", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/7qn3qsRRMCIPqF6L8ivn", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/pX1nas0BTwocUdHOnsqg", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/DTFUhYhFSpGUVvfznt0S", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: juergen, img_url: "https://www.filepicker.io/api/file/IjdbbcVoSKOaxBXwn6D9", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/uwUfrdQ1fIvMaUc0jpg6", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/9ZuhF1BpSbSBAS1V9Ws5", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/USMqzYpNRoS6j2ZHThM2", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/hBrqbKJ5Q6GpT6phbmwL", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/K3UYG36bTfqmWH1qI3nH", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/7qn3qsRRMCIPqF6L8ivn", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/pX1nas0BTwocUdHOnsqg", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/DTFUhYhFSpGUVvfznt0S", user_city: "San Francisco, CA, United States")
+Image.create!(user: juergen, img_url: "https://www.filepicker.io/api/file/IjdbbcVoSKOaxBXwn6D9", user_city: "San Francisco, CA, United States")
 
 #TERRY RICHARDSON'S IMAGES
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/twbtKpmFQPGNWt8rsZ4Y", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/UJUucH9ARBG3pUzlR5mA", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/z5PyzGFTTdey1TdzMMtP", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/gcGMc0UjQhOdF9C6T1dx", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/AtW1QvQ5W32Wi2ed2wtd", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/cHtxUBbsRpSK2vZc6GwX", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/LsguyZZQ1WzuAnX31JNW", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/IPHaZQzTTk6B3g7sGpk8", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/C5j895HmQeOnbKd9eK6p", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: terry, img_url: "https://www.filepicker.io/api/file/yJKaaOyTzGFWjzVKbpZi", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/twbtKpmFQPGNWt8rsZ4Y", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/UJUucH9ARBG3pUzlR5mA", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/z5PyzGFTTdey1TdzMMtP", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/gcGMc0UjQhOdF9C6T1dx", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/AtW1QvQ5W32Wi2ed2wtd", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/cHtxUBbsRpSK2vZc6GwX", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/LsguyZZQ1WzuAnX31JNW", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/IPHaZQzTTk6B3g7sGpk8", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/C5j895HmQeOnbKd9eK6p", user_city: "San Francisco, CA, United States")
+Image.create!(user: terry, img_url: "https://www.filepicker.io/api/file/yJKaaOyTzGFWjzVKbpZi", user_city: "San Francisco, CA, United States")
 
 #GODFREY GAO'S IMAGES
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/A6iw8fyWR06AMzmkzxZe", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/5p071c4RRHGNOaz5uLxu", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/gyC0aOohSimMAp0Mw5nA", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/nEamvuvjQbucBOZId10M", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/3bTWKDG7SVa1aAOxS9t3", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/SPx3bxqTH6amB1KJ3PN8", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/PgCBWCvsT12D2YuTvoDI", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/kFg0fAq1RiaqSk38GQlj", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/BzpLqSdfRcqr2gpplRk0", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: godfrey, img_url: "https://www.filepicker.io/api/file/V9wTMR9jR1KWSBWmqIgF", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/A6iw8fyWR06AMzmkzxZe", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/5p071c4RRHGNOaz5uLxu", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/gyC0aOohSimMAp0Mw5nA", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/nEamvuvjQbucBOZId10M", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/3bTWKDG7SVa1aAOxS9t3", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/SPx3bxqTH6amB1KJ3PN8", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/PgCBWCvsT12D2YuTvoDI", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/kFg0fAq1RiaqSk38GQlj", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/BzpLqSdfRcqr2gpplRk0", user_city: "San Francisco, CA, United States")
+Image.create!(user: godfrey, img_url: "https://www.filepicker.io/api/file/V9wTMR9jR1KWSBWmqIgF", user_city: "San Francisco, CA, United States")
 
 #KYLIE JENNER'S IMAGES
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/QJGJn7XtSBCXHsKCOnYd", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/x7e4gzQ2SgiJpDOQnA4q", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/EbmQujgRsiiSYmEnXYig", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/RygFuuOyQVmRMw5g1b3V", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/MiUNXDTOTiKY3SJcccQy", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/2tcDoYPbRvS8X0YaNiQ2", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/Uz15jOLTT5CIKLDa0ORC", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/yJqVdYleSYebv7rwsWEW", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/P0CV0LktTsq4nYvFlT6Z", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: kylie, img_url: "https://www.filepicker.io/api/file/dqYe85ySRtuiul2TOoAO", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/QJGJn7XtSBCXHsKCOnYd", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/x7e4gzQ2SgiJpDOQnA4q", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/EbmQujgRsiiSYmEnXYig", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/RygFuuOyQVmRMw5g1b3V", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/MiUNXDTOTiKY3SJcccQy", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/2tcDoYPbRvS8X0YaNiQ2", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/Uz15jOLTT5CIKLDa0ORC", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/yJqVdYleSYebv7rwsWEW", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/P0CV0LktTsq4nYvFlT6Z", user_city: "San Francisco, CA, United States")
+Image.create!(user: kylie, img_url: "https://www.filepicker.io/api/file/dqYe85ySRtuiul2TOoAO", user_city: "San Francisco, CA, United States")
 
 #LUPITA NYONG'O'S IMAGES
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/uM3awngWRmlref1jxOA6", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/0aj9VqRiCJJVzXH7Aptv", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/99WXkzDTZe9UhVghpqyQ", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/3V1APOO2TT2jKUcEa4Zn", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/wrLzc8TNRbOuJds7EZo3", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/c4XE0LaNQHe0pDAmrgxr", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/jKdJT46SbOYFhzC7gFkt", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/8zhyjcQrqzm89JQa8VLQ", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/DpWTi4LLQEx6GsKBzYbA", user_city: "San Francisco, CA, United States")
-Image.create!(user_id: lupita, img_url: "https://www.filepicker.io/api/file/dQxJKG5lS3eGw9IWW8d8", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/uM3awngWRmlref1jxOA6", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/0aj9VqRiCJJVzXH7Aptv", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/99WXkzDTZe9UhVghpqyQ", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/3V1APOO2TT2jKUcEa4Zn", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/wrLzc8TNRbOuJds7EZo3", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/c4XE0LaNQHe0pDAmrgxr", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/jKdJT46SbOYFhzC7gFkt", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/8zhyjcQrqzm89JQa8VLQ", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/DpWTi4LLQEx6GsKBzYbA", user_city: "San Francisco, CA, United States")
+Image.create!(user: lupita, img_url: "https://www.filepicker.io/api/file/dQxJKG5lS3eGw9IWW8d8", user_city: "San Francisco, CA, United States")
 
 User.all.each do |user|
   User.first(6).each do |exp_user|

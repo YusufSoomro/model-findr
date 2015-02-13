@@ -34,7 +34,6 @@ ModelFindrApp.Views.ImageIndex = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.subviews()['.img-list'] = this.sortSubviews();
-    debugger
     this.attachSubviews();
     var view = this;
 
