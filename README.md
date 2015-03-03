@@ -2,4 +2,4 @@
 
 A Flickr style social media app, connecting photographers to models.
 
-[live](www.modelfindr.com)
+[live](http://www.modelfindr.com)
