@@ -86,7 +86,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
 
   initGMapsAutoComplete: function(){
     this.$('.twitter-typeahead').remove();
-    $("<input type='text' id='searchTextField' placeholder=' i.e. San Francisco, CA'>").insertAfter("#city-or-users")
+    $("<input type='text' id='searchTextField' placeholder=' e.g. San Francisco, CA'>").insertAfter("#city-or-users")
       var options = {
         types: ['(cities)'],
         componentRestrictions: {country: "us"},
@@ -113,7 +113,7 @@ ModelFindrApp.Views.Navbar = Backbone.View.extend({
 
   initModelAutoComplete: function(){
           this.$('#searchTextField').remove()
-          $("<input type='text' id='searchTextField' value='' placeholder=' i.e. iamgalla'>").insertAfter("#city-or-users")
+          $("<input type='text' id='searchTextField' value='' placeholder=' e.g. iamgalla'>").insertAfter("#city-or-users")
 
           var substringMatcher = function(strs) {
             return function findMatches(q, cb) {
